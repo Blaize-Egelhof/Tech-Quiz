@@ -1,7 +1,7 @@
 /* insert Google font stuff below once completed 
 */
 body {
-    background: #50C878;
+    background: #666362;
 }
 
 /* On text selection pysudo selector
@@ -36,9 +36,32 @@ This ensures everything is centered within their parent container (browser)
 }
 
 .start_btn {
-    /* Style this start button 
-        */
+
     cursor: pointer;
+}
+
+.start_btn_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.start_btn_container button {
+    width: 50%;
+    padding: 10px 0 10px 0;
+    margin: 5px;
+    border-radius: 13px;
+}
+
+.start_btn_container button:hover {
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
+.welcome_title {
+    padding-bottom: 20px;
+    font-size: 35px;
+    white-space: nowrap;
 }
 
 .info_box {
@@ -196,10 +219,10 @@ section .option_list .option.correct {
     border: 1px solid white;
 }
 
-section .option_list .option.incorrect{
-    color:red;
-    background:white; 
-    border:1px solid white; 
+section .option_list .option.incorrect {
+    color: red;
+    background: white;
+    border: 1px solid white;
 }
 
 section .option_list .option.disabled {
@@ -207,15 +230,149 @@ section .option_list .option.disabled {
 }
 
 section .option_list .option.icon {
-    height:26px;
-    width:26px;
-    border:2px solid transparent;
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
     border-radius: 50%;
-    text-align:center; 
-    font-size:13px ; 
+    text-align: center;
+    font-size: 13px;
     pointer-events: none;
-    
+    transition: all 0, 3s ease;
+    line-height: 24px;
 }
 
+section .option_list .option.tick {
+    color: #50C878;
+    border-color: #50C878;
+    background: white;
+}
 
+section .option_list .option.cross {
+    color: red;
+    background: white;
+    border-color: red;
+}
 
+footer {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+}
+
+footer .total_questions {
+    display: flex;
+    user-select: none;
+}
+
+footer .total_questions span p {
+    padding: 0 5px;
+}
+
+footer .total_questions span p:first-child {
+    padding-left: 0px;
+}
+
+footer button {
+    height: 40px;
+    padding: 0 13px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    background: blue;
+    border: 1px solid blue;
+    line-height: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+footer button:hover {
+    background: white;
+}
+
+footer button.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.result_box {
+    background: white;
+    display: flex;
+    padding: 25px 30px;
+    width: 28.125rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(-50% -50%)scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.result_box .icon {
+    font-size: 20px;
+    color: #50C878;
+    margin-bottom: 10px;
+}
+
+.result_box .complete_text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.result_box .score_text span {
+    display: flex;
+    margin: 10px;
+    font-size: 8px;
+    font-weight: 400;
+}
+
+.result_box .score_text span p {
+    padding: 0 4px;
+    font-weight: 400;
+}
+
+.result_box .buttons {
+    display: flex;
+    margin: 20px 0;
+}
+
+.result_box .buttons button {
+    height: 45px;
+    margin: 0 10px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid green;
+    transition: all 0.3s ease;
+}
+
+.buttons button .restart {
+    color: white;
+    background: green;
+}
+
+.buttons button .restart:hover {
+    background: grey;
+}
+
+.buttons button .quit {
+    color: white;
+    background: green;
+}
+
+.buttons button .quit:hover {
+    color: red;
+    background: white;
+}
