@@ -1,0 +1,139 @@
+/* insert Google font stuff below once completed 
+*/
+body {
+    background: #50C878;
+}
+
+/* On text selection pysudo selector
+*/
+::selection {
+    color: white;
+    background: #50C878;
+}
+
+/* Set all containers to absolute , position them to be in center, then use transform and translate to ensure they will always appear in the center of the browser as neither containers have a parent , they default to the browser dimensions!
+This ensures everything is centered within their parent container (browser) 
+*/
+.start_btn,
+.info-title,
+.quiz_box,
+.result_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Add further styling to buttons to make them NYA! 
+    */
+}
+
+.infobox.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.start_btn {
+    /* Style this start button 
+        */
+    cursor: pointer;
+}
+
+.info_box {
+    width: 33.75rem;
+    /*Check this */
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0, 3s ease;
+}
+
+.info_box .info-title {
+    height: 3.75rem;
+    width: 100%;
+    display: flex;
+    padding: 0 30px;
+    border-radius: 5px 5px 0 0;
+}
+
+.info_box .infolist {
+    padding: 15px 30px;
+}
+
+.info_box .infolist .info {
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.info_box .infolist .info span {
+    color: red;
+}
+
+.info_box .buttons {
+    height: 3.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 30px;
+}
+
+.info_box .buttons button {
+    margin: 0 5px;
+    height: 2.5rem;
+    width: 6.25rem;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quiz_box {
+    width: 34.375rem;
+    background: white;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3 ease;
+}
+
+.quiz_box header {
+    position: relative;
+    z-index: 2;
+    height: 4.375rem;
+    padding: 0 30px;
+    background: white;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quiz_box header .title {
+    font-size: 20px;
+}
+
+.quiz_box header .timer {
+    color: #50C878;
+    background: white;
+    border: 1px solid white;
+    height: 2.813rem;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 9.063rem;
+}
+
+.quiz_box header .timer .time_left_txt {
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.quiz_box header .timer .timer_sec {
+    font-size: 18px;
+    height: 30px;
+    width: 45px;
+
+}
