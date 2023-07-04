@@ -135,5 +135,87 @@ This ensures everything is centered within their parent container (browser)
     font-size: 18px;
     height: 30px;
     width: 45px;
-
+    color: white;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    background: grey;
+    user-select: none;
 }
+
+.quiz_box header .time_line {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: #50C878;
+}
+
+section {
+    padding: 25px 30px 20px 30px;
+    background: white;
+}
+
+section .question_text {
+    font-weight: 25px;
+    font-size: 25px;
+}
+
+section .option_list {
+    display: block;
+    padding: 20px 0px;
+}
+
+section .option_list .option {
+    background: #50C878;
+    border: 1 px solid #84c5fe;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .option_list .option:last-child {
+    margin-bottom: 0px;
+}
+
+section .option_list .option:hover {
+    color: lightgreen;
+    background: white;
+    border: 1px solid white;
+}
+
+section .option_list .option.correct {
+    color: green;
+    background: white;
+    border: 1px solid white;
+}
+
+section .option_list .option.incorrect{
+    color:red;
+    background:white; 
+    border:1px solid white; 
+}
+
+section .option_list .option.disabled {
+    pointer-events: none;
+}
+
+section .option_list .option.icon {
+    height:26px;
+    width:26px;
+    border:2px solid transparent;
+    border-radius: 50%;
+    text-align:center; 
+    font-size:13px ; 
+    pointer-events: none;
+    
+}
+
+
+
