@@ -39,7 +39,10 @@ let start_btn = document.querySelector('.start_btn_container > button');
 let feedback_btn = document.querySelector('.start_btn_container > button')[1];
 let info_box = document.getElementsByClassName('info_box')[0];
 let quit_btn = document.getElementsByClassName('quit')[0];
-console.log(quit_btn);
+let continue_btn = document.getElementsByClassName('continue')[0];
+console.log(continue_btn);
+let quiz_box = document.getElementsByClassName('quiz_box')[0];
+console.log(quiz_box);
 
 
 //function to respond to when start quiz button is clicked
@@ -57,6 +60,16 @@ start_btn.onclick = function showQuizRules() {
 quit_btn.onclick = function hideQuizRules() {
     console.log('BUTTON IS CLICKED');
     info_box.classList.remove("activeInfo");
+};
+
+//function to respond to when user clicks Continue Quiz button on info box
+//On click remove info_box and show quiz_box
+
+continue_btn.onclick = function openQuizBox() {
+    console.log('BUTTON IS CLICKED');
+    info_box.classList.remove("activeInfo");
+    quiz_box.classList.add("activeQuiz");
+
 };
 
 
