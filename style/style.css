@@ -15,7 +15,7 @@ body {
 This ensures everything is centered within their parent container (browser) 
 */
 .start_btn,
-.info-title,
+.info_box,
 .quiz_box,
 .result_box {
     position: absolute;
@@ -26,7 +26,7 @@ This ensures everything is centered within their parent container (browser)
     */
 }
 
-.infobox.activeInfo,
+.info_box.activeInfo,
 .quiz_box.activeQuiz,
 .result_box.activeResult {
     opacity: 1;
@@ -64,13 +64,16 @@ This ensures everything is centered within their parent container (browser)
     white-space: nowrap;
 }
 
+
 .info_box {
-    width: 33.75rem;
+    width: 540px;
     /*Check this */
     opacity: 0;
     pointer-events: none;
     transition: all 0, 3s ease;
+    background: white;
 }
+
 
 .info_box .info-title {
     height: 3.75rem;
