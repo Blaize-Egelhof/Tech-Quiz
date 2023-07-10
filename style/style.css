@@ -299,10 +299,14 @@ footer button:hover {
     background: white;
 }
 
-footer button.show {
+footer button.next_btn.working {
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
+}
+
+footer button .restart_quiz {
+    padding-left: 500px;
 }
 
 .result_box {

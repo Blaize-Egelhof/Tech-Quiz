@@ -43,6 +43,7 @@ let continue_btn = document.getElementsByClassName('continue')[0];
 let quiz_box = document.getElementsByClassName('quiz_box')[0];
 
 
+
 //function to respond to when start quiz button is clicked
 //On click activate the class to reveal rules of quiz and disable class for front page
 
@@ -59,6 +60,16 @@ quit_btn.onclick = function hideQuizRules() {
     info_box.classList.remove("activeInfo");
 };
 
+function workingNextButton() {
+    document.getElementsByClassName("next_btn")[0].classList.add("working");
+}
+
+function workingRestartQuizButton() {
+    document.getElementsByClassName("restart_quiz")[0];
+    document.getElementsByClassName("restart_quiz")[0].classList.add("show");
+
+}
+
 //function to respond to when user clicks Continue Quiz button on info box
 //On click remove info_box and show quiz_box
 
@@ -70,10 +81,6 @@ continue_btn.onclick = function openQuizBox() {
     showOptions1();
     showCorrectAnswer();
 };
-
-
-
-
 //Quiz main form
 //create a function to show question
 function showQuestion1() {
@@ -92,6 +99,7 @@ function showOptions1() {
     }
 }
 
+
 function showCorrectAnswer() {
     const options = document.getElementsByClassName("option");
     const answer = question1[0].answer;
@@ -100,148 +108,25 @@ function showCorrectAnswer() {
         options[i].addEventListener("click", function saveUserInput() {
             const userAnswer = this.textContent;
 
+            for (let j = 0; j < options.length; j++) {
+                if (options[j] === this) {
+                    options[j].classList.add("correct");
+                } else {
+                    options[j].classList.add("incorrect");
+                }
+            }
+
             if (userAnswer === answer) {
                 alert("Correct!");
             } else {
                 alert("Wrong!");
             }
+
+            if (userAnswer !== "") {
+                workingNextButton();
+            } else {
+                alert("huh??");
+            }
         });
     }
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let next_btn = document.querySelector('footer .next_btn');
-let restart_btn = document.querySelector('footer .restart_quiz');
-
-
-
-
-
-//result box 
-
-let result_box = document.getElementsByClassName('result_box')[0];
-
-let restart_quiz = result_box.querySelector(".button .restart ");
-let quit_quiz = result_box.querySelector(".button .quit");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//functions for if the restart or quit buttons are pressed in result box container.
-
-restart_quiz.onclick = function restartQuiz() {
-    result_box.classList.remove("activeResult"); //remove result box completly
-    quiz_box.classList.add("activeQuiz"); //Show the quizbox again.
-
-};
-
-//reload the entire site when quit button is pressed 
-
-quit_quiz.onclick = function quitQuiz() {
-    location.reload();
-};
-
-
