@@ -40,9 +40,7 @@ let feedback_btn = document.querySelector('.start_btn_container > button')[1];
 let info_box = document.getElementsByClassName('info_box')[0];
 let quit_btn = document.getElementsByClassName('quit')[0];
 let continue_btn = document.getElementsByClassName('continue')[0];
-console.log(continue_btn);
 let quiz_box = document.getElementsByClassName('quiz_box')[0];
-console.log(quiz_box);
 
 
 //function to respond to when start quiz button is clicked
@@ -51,7 +49,6 @@ console.log(quiz_box);
 start_btn.onclick = function showQuizRules() {
     console.log('BUTTON IS CLICKED');
     info_box.classList.add("activeInfo");  //show info box
-    console.log(info_box);
 };
 
 //function to respond to when user clicks Exit Quiz button on info box
@@ -69,7 +66,182 @@ continue_btn.onclick = function openQuizBox() {
     console.log('BUTTON IS CLICKED');
     info_box.classList.remove("activeInfo");
     quiz_box.classList.add("activeQuiz");
+    showQuestion1();
+    showOptions1();
+    showCorrectAnswer();
+};
 
+
+
+
+//Quiz main form
+//create a function to show question
+function showQuestion1() {
+
+    let questionText = document.getElementsByClassName('question_text')[0];   //target the div which will contain the question
+    questionText.innerHTML = question1[0].question;  //Look at question1 variable , select index 0 object and focus on the .question property.
+}
+
+
+function showOptions1() {
+    const optionElements = document.getElementsByClassName('option'); //assign array to optionElements by options classname
+    const options = question1[0].options; // Assign the entire array of .options in variable
+
+    for (i = 0; i < optionElements.length; i++) {
+        optionElements[i].textContent = options[i]; // Take the array and test if its < than i , its not.  THEN take optionsElements passing it i for indexing and giving it the string of options passing it i as well for index .So basically assign string vale to div class value and increase i by 1 to do the same until the condition stated is false.
+    }
+}
+
+function showCorrectAnswer() {
+    const options = document.getElementsByClassName("option");
+    const answer = question1[0].answer;
+
+    for (let i = 0; i < options.length; i++) {
+        options[i].addEventListener("click", function saveUserInput() {
+            const userAnswer = this.textContent;
+
+            if (userAnswer === answer) {
+                alert("Correct!");
+            } else {
+                alert("Wrong!");
+            }
+        });
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let next_btn = document.querySelector('footer .next_btn');
+let restart_btn = document.querySelector('footer .restart_quiz');
+
+
+
+
+
+//result box 
+
+let result_box = document.getElementsByClassName('result_box')[0];
+
+let restart_quiz = result_box.querySelector(".button .restart ");
+let quit_quiz = result_box.querySelector(".button .quit");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//functions for if the restart or quit buttons are pressed in result box container.
+
+restart_quiz.onclick = function restartQuiz() {
+    result_box.classList.remove("activeResult"); //remove result box completly
+    quiz_box.classList.add("activeQuiz"); //Show the quizbox again.
+
+};
+
+//reload the entire site when quit button is pressed 
+
+quit_quiz.onclick = function quitQuiz() {
+    location.reload();
 };
 
 
