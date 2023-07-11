@@ -41,6 +41,8 @@ let info_box = document.getElementsByClassName('info_box')[0];
 let quit_btn = document.getElementsByClassName('quit')[0];
 let continue_btn = document.getElementsByClassName('continue')[0];
 let quiz_box = document.getElementsByClassName('quiz_box')[0];
+var right = 0;
+var wrong = 0;
 
 
 
@@ -80,8 +82,38 @@ continue_btn.onclick = function openQuizBox() {
     showQuestion1();
     showOptions1();
     showCorrectAnswer();
+    rightOrWrong();
+    startTimer();
 };
 //Quiz main form
+
+function startTimer() {
+    let timeLeft = 20; // Initial time in seconds
+
+    const timerElement = document.querySelector(".timer_sec"); // Select the timer element in your HTML
+
+    // Update the timer element with initial time
+    if (timerElement) {
+        timerElement.textContent = timeLeft;
+    }
+
+    // Function to update the timer every second
+    const timer = setInterval(() => {
+        timeLeft--;
+
+        // Update the timer element with the new time
+        if (timerElement) {
+            timerElement.textContent = timeLeft;
+        }
+
+        // Check if the timer has reached 0
+        if (timeLeft === 0) {
+            clearInterval(timer); // Stop the timer
+            alert("time is up!");
+            // For example: alert("Time's up!");
+        }
+    }, 1000); // Timer ticks every 1000 milliseconds (1 second)
+}
 //create a function to show question
 function showQuestion1() {
 
@@ -99,17 +131,23 @@ function showOptions1() {
     }
 }
 
+function rightOrWrong() {
+    document.getElementsByClassName("r_or_w_txt")[0].classList.add("right_txt");
+    document.getElementsByClassName("r_or_w_txt")[1].classList.add("wrong_txt");
+}
+
 
 function showCorrectAnswer() {
     const options = document.getElementsByClassName("option");
     const answer = question1[0].answer;
+
 
     for (let i = 0; i < options.length; i++) {
         options[i].addEventListener("click", function saveUserInput() {
             const userAnswer = this.textContent;
 
             for (let j = 0; j < options.length; j++) {
-                if (options[j] === this) {
+                if (options[j].textContent === answer) {
                     options[j].classList.add("correct");
                 } else {
                     options[j].classList.add("incorrect");
@@ -118,15 +156,21 @@ function showCorrectAnswer() {
 
             if (userAnswer === answer) {
                 alert("Correct!");
+                right++;
+                console.log(right);
             } else {
                 alert("Wrong!");
+                wrong++;
+                console.log(wrong);
             }
+            document.getElementsByClassName("r_or_w_txt")[0].innerHTML = right;
+            document.getElementsByClassName("r_or_w_txt")[1].innerHTML = wrong;
 
             if (userAnswer !== "") {
                 workingNextButton();
             } else {
-                alert("huh??");
+                alert("Error Occured , please refresh browser");
             }
         });
     }
-}
+};;;

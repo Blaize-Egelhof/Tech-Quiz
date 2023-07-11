@@ -219,13 +219,13 @@ section .option_list .option:hover {
 section .option_list .option.correct {
     color: green;
     background: white;
-    border: 1px solid white;
+    border: 1px solid green;
 }
 
 section .option_list .option.incorrect {
     color: red;
     background: white;
-    border: 1px solid white;
+    border: 1px solid red;
 }
 
 section .option_list .option.disabled {
@@ -242,18 +242,6 @@ section .option_list .option.icon {
     pointer-events: none;
     transition: all 0, 3s ease;
     line-height: 24px;
-}
-
-section .option_list .option.tick {
-    color: #50C878;
-    border-color: #50C878;
-    background: white;
-}
-
-section .option_list .option.cross {
-    color: red;
-    background: white;
-    border-color: red;
 }
 
 footer {
@@ -286,13 +274,38 @@ footer button {
     outline: none;
     color: white;
     border-radius: 5px;
-    background: blue;
+    background: black;
     border: 1px solid blue;
     line-height: 10px;
     opacity: 0;
     pointer-events: none;
     transform: scale(0.95);
     transition: all 0.3s ease;
+}
+
+.r_or_w {
+    height: 40px;
+    padding: 0 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: black;
+    border-radius: 5px;
+    line-height: 10px;
+    opacity: 1;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+    width: 8%;
+}
+
+.right_txt {
+    color: green;
+}
+
+.wrong_txt {
+    color: red;
 }
 
 footer button:hover {
@@ -377,9 +390,4 @@ footer button .restart_quiz {
 .buttons button .quit {
     color: white;
     background: green;
-}
-
-.buttons button .quit:hover {
-    color: red;
-    background: white;
 }
