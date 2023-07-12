@@ -51,17 +51,20 @@ This ensures everything is centered within their parent container (browser)
     padding: 10px 0 10px 0;
     margin: 5px;
     border-radius: 13px;
+    transition: all 0.3s ease;
 }
 
 .start_btn_container button:hover {
     letter-spacing: 1px;
     text-decoration: underline;
+    transition: all 0.3s ease;
 }
 
 .welcome_title {
     padding-bottom: 20px;
     font-size: 35px;
     white-space: nowrap;
+    font-family: 'Roboto Slab', serif;
 }
 
 
@@ -81,15 +84,18 @@ This ensures everything is centered within their parent container (browser)
     display: flex;
     padding: 0 30px;
     border-radius: 5px 5px 0 0;
+    font-family: 'Roboto Slab', serif;
+    font-size: 28px;
 }
 
 .info_box .infolist {
     padding: 15px 30px;
+    font-family: 'Roboto Slab', serif;
 }
 
 .info_box .infolist .info {
     margin: 5px 0;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .info_box .infolist .info span {
@@ -102,15 +108,24 @@ This ensures everything is centered within their parent container (browser)
     align-items: center;
     justify-content: flex-end;
     padding: 0 30px;
+    transition: all 0.3s ease;
 }
 
 .info_box .buttons button {
     margin: 0 5px;
     height: 2.5rem;
     width: 6.25rem;
-    font-size: 16px;
+    font-size: 13px;
     cursor: pointer;
     transition: all 0.3s ease;
+    padding: 10px 0 10px 0;
+    margin: 5px;
+    border-radius: 13px;
+}
+
+.info_box .buttons button:hover {
+    letter-spacing: 1px;
+    text-decoration: underline;
 }
 
 .quiz_box {
@@ -135,7 +150,9 @@ This ensures everything is centered within their parent container (browser)
 }
 
 .quiz_box header .title {
+    text-decoration: underline;
     font-size: 20px;
+    font-family: 'Roboto Slab', serif;
 }
 
 .quiz_box header .timer {
@@ -169,12 +186,22 @@ This ensures everything is centered within their parent container (browser)
     user-select: none;
 }
 
-.quiz_box header .time_line {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    height: 3px;
-    background: #50C878;
+.disabled {
+    pointer-events: none;
+}
+
+section .option_list .option.correct {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid green;
+    transition: all 0.3s ease;
+}
+
+section .option_list .option.incorrect {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid red;
+    transition: all 0.3s ease;
 }
 
 section {
@@ -183,8 +210,8 @@ section {
 }
 
 section .question_text {
-    font-weight: 25px;
     font-size: 25px;
+    font-family: 'Roboto Slab', serif;
 }
 
 section .option_list {
@@ -216,32 +243,8 @@ section .option_list .option:hover {
     border: 1px solid white;
 }
 
-section .option_list .option.correct {
-    color: green;
-    background: white;
-    border: 1px solid green;
-}
-
-section .option_list .option.incorrect {
-    color: red;
-    background: white;
-    border: 1px solid red;
-}
-
 section .option_list .option.disabled {
     pointer-events: none;
-}
-
-section .option_list .option.icon {
-    height: 26px;
-    width: 26px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 13px;
-    pointer-events: none;
-    transition: all 0, 3s ease;
-    line-height: 24px;
 }
 
 footer {

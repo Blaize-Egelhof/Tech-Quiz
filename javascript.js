@@ -72,6 +72,12 @@ function workingRestartQuizButton() {
 
 }
 
+function freezeOptions() {
+    let freeze = document.getElementsByClassName("option_list")[0];
+    freeze.classList.add("disabled");
+
+}
+
 //function to respond to when user clicks Continue Quiz button on info box
 //On click remove info_box and show quiz_box
 
@@ -86,6 +92,8 @@ continue_btn.onclick = function openQuizBox() {
     startTimer();
 };
 //Quiz main form
+
+
 
 function startTimer() {
     let timeLeft = 20; // Initial time in seconds
@@ -110,10 +118,17 @@ function startTimer() {
         if (timeLeft === 0) {
             clearInterval(timer); // Stop the timer
             alert("time is up!");
-            // For example: alert("Time's up!");
+            wrong++;
+            autoShowAnswer();
+            freezeOptions();
+            workingNextButton();
         }
     }, 1000); // Timer ticks every 1000 milliseconds (1 second)
 }
+
+//create a function to show the correct answer , without needing a users input
+
+
 //create a function to show question
 function showQuestion1() {
 
@@ -132,6 +147,8 @@ function showOptions1() {
 }
 
 function rightOrWrong() {
+    document.getElementsByClassName("r_or_w_txt")[0].innerHTML = right;
+    document.getElementsByClassName("r_or_w_txt")[1].innerHTML = wrong;
     document.getElementsByClassName("r_or_w_txt")[0].classList.add("right_txt");
     document.getElementsByClassName("r_or_w_txt")[1].classList.add("wrong_txt");
 }
@@ -157,20 +174,34 @@ function showCorrectAnswer() {
             if (userAnswer === answer) {
                 alert("Correct!");
                 right++;
-                console.log(right);
             } else {
                 alert("Wrong!");
                 wrong++;
-                console.log(wrong);
             }
             document.getElementsByClassName("r_or_w_txt")[0].innerHTML = right;
             document.getElementsByClassName("r_or_w_txt")[1].innerHTML = wrong;
 
             if (userAnswer !== "") {
                 workingNextButton();
+                freezeOptions();
+
             } else {
                 alert("Error Occured , please refresh browser");
             }
         });
     }
 };;;
+
+function autoShowAnswer() {
+    const options = document.getElementsByClassName("option");
+    const answer = question1[0].answer;
+
+    for (let j = 0; j < options.length; j++) {
+        if (options[j].textContent === answer) {
+            options[j].classList.add("correct");
+        } else {
+            options[j].classList.add("incorrect");
+        }
+    }
+
+}
