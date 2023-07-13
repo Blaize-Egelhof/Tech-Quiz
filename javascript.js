@@ -44,6 +44,8 @@ let quiz_box = document.getElementsByClassName('quiz_box')[0];
 var right = 0;
 var wrong = 0;
 
+let next_btn = document.getElementsByClassName('next_btn')[0];
+
 
 
 //function to respond to when start quiz button is clicked
@@ -90,14 +92,27 @@ continue_btn.onclick = function openQuizBox() {
     showCorrectAnswer();
     rightOrWrong();
     startTimer();
+
 };
+
+next_btn.onclick = function startNewQuiz1() {
+    ClearQuiz();
+    showQuestion2();
+    showOptions2();
+    unfreezeOptions();
+    clearOptionsStyling();
+    removeEventListeners();
+    showCorrectAnswer1();
+};
+
+
+
 //Quiz main form
 
 
 
 function startTimer() {
-    let timeLeft = 20; // Initial time in seconds
-
+    let timeLeft = 20;
     const timerElement = document.querySelector(".timer_sec"); // Select the timer element in your HTML
 
     // Update the timer element with initial time
@@ -117,7 +132,7 @@ function startTimer() {
         // Check if the timer has reached 0
         if (timeLeft === 0) {
             clearInterval(timer); // Stop the timer
-            alert("time is up!");
+            alert("Time is up!");
             wrong++;
             autoShowAnswer();
             freezeOptions();
@@ -205,3 +220,92 @@ function autoShowAnswer() {
     }
 
 }
+
+function ClearQuiz() {
+    const questionText = document.getElementsByClassName('question_text')[0];
+    questionText.innerHTML = '';
+
+    const optionElements = document.getElementsByClassName('option');
+    for (let i = 0; i < optionElements.length; i++) {
+        optionElements[i].textContent = '';
+    }
+};
+
+function showQuestion2() {
+    let questionText1 = document.getElementsByClassName('question_text')[0];   //target the div which will contain the question
+    questionText1.innerHTML = question2[0].question;  //Look at question1 variable , select index 0 object and focus on the .question property.
+}
+
+function showOptions2() {
+    const optionElements1 = document.getElementsByClassName('option'); //assign array to optionElements by options classname
+    const options1 = question2[0].options; // Assign the entire array of .options in variable
+
+    for (i = 0; i < optionElements1.length; i++) {
+        optionElements1[i].textContent = options1[i]; // Take the array and test if its < than i , its not.  THEN take optionsElements passing it i for indexing and giving it the string of options passing it i as well for index .So basically assign string vale to div class value and increase i by 1 to do the same until the condition stated is false.
+    }
+}
+
+
+function unfreezeOptions() {
+    let unfreeze = document.getElementsByClassName("option_list")[0];
+    unfreeze.classList.add("enabled");
+}
+
+function clearOptionsStyling() {
+    const newOptions = document.getElementsByClassName("option");
+    for (let i = 0; i < newOptions.length; i++) {
+        if (newOptions[i].classList.contains("correct")) {
+            newOptions[i].classList.remove("correct");
+        } else {
+            newOptions[i].classList.remove("incorrect");
+        }
+    }
+}
+
+
+function showCorrectAnswer1() {
+    const options1 = document.getElementsByClassName("option");
+
+    for (let i = 0; i < options1.length; i++) {
+        options1[i].addEventListener("click", saveUserInput1);
+    }
+}
+
+function saveUserInput1() {
+    const userAnswer1 = this.textContent;
+    const options1 = document.getElementsByClassName("option");
+    const answer1 = question2[0].answer;
+    console.log(answer1);
+
+    for (let j = 0; j < options1.length; j++) {
+        if (options1[j].textContent === answer1) {
+            options1[j].classList.add("correct");
+            console.log(options1[i]);
+        } else {
+            options1[j].classList.add("incorrect");
+        }
+    }
+
+    if (userAnswer1 === answer1) {
+        alert("Correct!");
+        right++;
+    } else {
+        alert("Wrong!");
+        wrong++;
+    }
+
+    if (userAnswer1 !== "") {
+        workingNextButton();
+        freezeOptions();
+    } else {
+        alert("Error Occurred, please refresh the browser.");
+    }
+}
+
+function removeEventListeners() {
+    const options_ = document.getElementsByClassName("option");
+    for (let i = 0; i < options_.length; i++) {
+        options_[i].removeEventListener("click", saveUserInput);
+    }
+}
+

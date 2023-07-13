@@ -190,6 +190,10 @@ This ensures everything is centered within their parent container (browser)
     pointer-events: none;
 }
 
+.enabled {
+    pointer-events: auto;
+}
+
 section .option_list .option.correct {
     color: #155724;
     background: #d4edda;
