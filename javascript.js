@@ -2,6 +2,19 @@
 // create an array that holds first question,answer and options. 
 //My logic is IF answer === to 1 of the options then its correct , run a function
 //Variable which has an array assigned to it, the array has an object, said object has properties .
+document.addEventListener("DOMContentLoaded", function () {
+    rightOrWrong();
+});
+
+function rightOrWrong() {
+    const rightTxt = document.getElementsByClassName("r_or_w_txt")[0];
+    const wrongTxt = document.getElementsByClassName("r_or_w_txt")[1];
+
+    rightTxt.innerHTML = right;
+    wrongTxt.innerHTML = wrong;
+    rightTxt.classList.add("right_txt");
+    wrongTxt.classList.add("wrong_txt");
+}
 
 let question1 = [
     {
@@ -87,9 +100,8 @@ continue_btn.onclick = function openQuizBox() {
     console.log('BUTTON IS CLICKED');
     info_box.classList.remove("activeInfo");
     quiz_box.classList.add("activeQuiz");
-    showQuestion1();
-    showOptions1();
-    showCorrectAnswer();
+    showQuestion(question1);
+    showOptions(question1);
     rightOrWrong();
     startTimer();
 
@@ -134,6 +146,7 @@ function startTimer() {
             clearInterval(timer); // Stop the timer
             alert("Time is up!");
             wrong++;
+            rightOrWrong();
             autoShowAnswer();
             freezeOptions();
             workingNextButton();
@@ -145,39 +158,69 @@ function startTimer() {
 
 
 //create a function to show question
-function showQuestion1() {
+function showQuestion(_question_) {
 
     let questionText = document.getElementsByClassName('question_text')[0];   //target the div which will contain the question
-    questionText.innerHTML = question1[0].question;  //Look at question1 variable , select index 0 object and focus on the .question property.
+    questionText.innerHTML = _question_[0].question;  //Look at question1 variable , select index 0 object and focus on the .question property.
 }
 
 
-function showOptions1() {
-    const optionElements = document.getElementsByClassName('option'); //assign array to optionElements by options classname
-    const options = question1[0].options; // Assign the entire array of .options in variable
+function showOptions(_question_) {
+    const optionElements = document.getElementsByClassName('option');
+    const options = _question_[0].options;
 
-    for (i = 0; i < optionElements.length; i++) {
-        optionElements[i].textContent = options[i]; // Take the array and test if its < than i , its not.  THEN take optionsElements passing it i for indexing and giving it the string of options passing it i as well for index .So basically assign string vale to div class value and increase i by 1 to do the same until the condition stated is false.
+    for (let i = 0; i < optionElements.length; i++) {
+        optionElements[i].textContent = options[i];
+        optionElements[i].addEventListener("click", function () {
+            saveUserInput(question1, optionElements[i].textContent);
+        });
     }
 }
 
-function rightOrWrong() {
+
+
+function saveUserInput(_variable_, _userAnswer_) {
+    const options = document.getElementsByClassName("option");
+    const userAnswer = this.textContent;
+    const answer = _variable_[0].answer;
+
+    for (let j = 0; j < options.length; j++) {
+        if (options[j].textContent === answer) {
+            options[j].classList.add("correct");
+        } else {
+            options[j].classList.add("incorrect");
+        }
+    }
+
+    if (_userAnswer_ === answer) {
+        alert("Correct!");
+        right++;
+    } else {
+        alert("Wrong!");
+        wrong++;
+    }
+
     document.getElementsByClassName("r_or_w_txt")[0].innerHTML = right;
     document.getElementsByClassName("r_or_w_txt")[1].innerHTML = wrong;
-    document.getElementsByClassName("r_or_w_txt")[0].classList.add("right_txt");
-    document.getElementsByClassName("r_or_w_txt")[1].classList.add("wrong_txt");
+
+    if (_userAnswer_ !== "") {
+        workingNextButton();
+        freezeOptions();
+    } else {
+        alert("Error Occured, please refresh the browser");
+    }
 }
 
 
-function showCorrectAnswer() {
+/*function showCorrectAnswer(_answer_) {
     const options = document.getElementsByClassName("option");
-    const answer = question1[0].answer;
-
-
+    const answer = _answer_[0].answer;
+ 
+ 
     for (let i = 0; i < options.length; i++) {
         options[i].addEventListener("click", function saveUserInput() {
             const userAnswer = this.textContent;
-
+ 
             for (let j = 0; j < options.length; j++) {
                 if (options[j].textContent === answer) {
                     options[j].classList.add("correct");
@@ -185,7 +228,7 @@ function showCorrectAnswer() {
                     options[j].classList.add("incorrect");
                 }
             }
-
+ 
             if (userAnswer === answer) {
                 alert("Correct!");
                 right++;
@@ -195,17 +238,18 @@ function showCorrectAnswer() {
             }
             document.getElementsByClassName("r_or_w_txt")[0].innerHTML = right;
             document.getElementsByClassName("r_or_w_txt")[1].innerHTML = wrong;
-
+ 
             if (userAnswer !== "") {
                 workingNextButton();
                 freezeOptions();
-
+ 
             } else {
                 alert("Error Occured , please refresh browser");
             }
         });
     }
 };;;
+*/
 
 function autoShowAnswer() {
     const options = document.getElementsByClassName("option");
@@ -230,21 +274,6 @@ function ClearQuiz() {
         optionElements[i].textContent = '';
     }
 };
-
-function showQuestion2() {
-    let questionText1 = document.getElementsByClassName('question_text')[0];   //target the div which will contain the question
-    questionText1.innerHTML = question2[0].question;  //Look at question1 variable , select index 0 object and focus on the .question property.
-}
-
-function showOptions2() {
-    const optionElements1 = document.getElementsByClassName('option'); //assign array to optionElements by options classname
-    const options1 = question2[0].options; // Assign the entire array of .options in variable
-
-    for (i = 0; i < optionElements1.length; i++) {
-        optionElements1[i].textContent = options1[i]; // Take the array and test if its < than i , its not.  THEN take optionsElements passing it i for indexing and giving it the string of options passing it i as well for index .So basically assign string vale to div class value and increase i by 1 to do the same until the condition stated is false.
-    }
-}
-
 
 function unfreezeOptions() {
     let unfreeze = document.getElementsByClassName("option_list")[0];
