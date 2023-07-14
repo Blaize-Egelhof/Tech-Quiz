@@ -81,6 +81,10 @@ function workingNextButton() {
     document.getElementsByClassName("next_btn")[0].classList.add("working");
 }
 
+function transparentNextButton() {
+    document.getElementsByClassName("next_btn")[0].classList.add("disabled");
+}
+
 function workingRestartQuizButton() {
     document.getElementsByClassName("restart_quiz")[0];
     document.getElementsByClassName("restart_quiz")[0].classList.add("show");
@@ -103,56 +107,64 @@ continue_btn.onclick = function openQuizBox() {
     showQuestion(question1);
     showOptions(question1);
     rightOrWrong();
-    startTimer();
+    startTimer(20);
 
 };
 
 next_btn.onclick = function startNewQuiz1() {
     ClearQuiz();
-    showQuestion2();
-    showOptions2();
+    showQuestion(question2);
+    showOptions(question2);
     unfreezeOptions();
-    clearOptionsStyling();
-    removeEventListeners();
-    showCorrectAnswer1();
+    transparentNextButton();
+    rightOrWrong();
+    startTimer(20);
 };
 
+let timer; // Declare a global variable to store the timer
+let isTimerRunning = false; // Track the status of the timer
 
+function startTimer(time) {
+    clearInterval(timer); // Clear the previous timer (if any)
 
-//Quiz main form
+    let timeLeft = time;
+    const timerElement = document.querySelector(".timer_sec");
 
-
-
-function startTimer() {
-    let timeLeft = 20;
-    const timerElement = document.querySelector(".timer_sec"); // Select the timer element in your HTML
-
-    // Update the timer element with initial time
     if (timerElement) {
         timerElement.textContent = timeLeft;
     }
 
-    // Function to update the timer every second
-    const timer = setInterval(() => {
+    isTimerRunning = true;
+
+    timer = setInterval(() => {
+        if (!isTimerRunning) {
+            clearInterval(timer); // Stop the timer if isTimerRunning is set to false
+            return;
+        }
+
         timeLeft--;
 
-        // Update the timer element with the new time
         if (timerElement) {
             timerElement.textContent = timeLeft;
         }
 
-        // Check if the timer has reached 0
         if (timeLeft === 0) {
-            clearInterval(timer); // Stop the timer
+            clearInterval(timer);
             alert("Time is up!");
             wrong++;
             rightOrWrong();
-            autoShowAnswer();
+            autoShowAnswer(question1);
             freezeOptions();
             workingNextButton();
         }
-    }, 1000); // Timer ticks every 1000 milliseconds (1 second)
+    }, 1000);
 }
+
+function stopTimer() {
+    isTimerRunning = false; // Set isTimerRunning to false to stop the timer
+}
+
+
 
 //create a function to show the correct answer , without needing a users input
 
@@ -164,18 +176,30 @@ function showQuestion(_question_) {
     questionText.innerHTML = _question_[0].question;  //Look at question1 variable , select index 0 object and focus on the .question property.
 }
 
-
+// THE CLONING SYTAX was taken from stackoverflow. 
 function showOptions(_question_) {
+    const optionContainer = document.getElementsByClassName('option_list')[0];
     const optionElements = document.getElementsByClassName('option');
     const options = _question_[0].options;
 
-    for (let i = 0; i < optionElements.length; i++) {
-        optionElements[i].textContent = options[i];
-        optionElements[i].addEventListener("click", function () {
-            saveUserInput(question1, optionElements[i].textContent);
+    // Clone the option container to remove all event listeners
+    const newOptionContainer = optionContainer.cloneNode(true);
+    optionContainer.parentNode.replaceChild(newOptionContainer, optionContainer);
+
+    // Retrieve the cloned option elements
+    const newOptionElements = newOptionContainer.getElementsByClassName('option');
+
+    // Update the text content and add new event listeners
+    for (let i = 0; i < newOptionElements.length; i++) {
+        newOptionElements[i].textContent = options[i];
+        newOptionElements[i].classList.remove("correct");
+        newOptionElements[i].classList.remove("incorrect");
+        newOptionElements[i].addEventListener("click", function () {
+            saveUserInput(_question_, newOptionElements[i].textContent);
         });
     }
 }
+
 
 
 
@@ -195,9 +219,11 @@ function saveUserInput(_variable_, _userAnswer_) {
     if (_userAnswer_ === answer) {
         alert("Correct!");
         right++;
+        stopTimer();
     } else {
         alert("Wrong!");
         wrong++;
+        stopTimer();
     }
 
     document.getElementsByClassName("r_or_w_txt")[0].innerHTML = right;
@@ -206,6 +232,7 @@ function saveUserInput(_variable_, _userAnswer_) {
     if (_userAnswer_ !== "") {
         workingNextButton();
         freezeOptions();
+        stopTimer();
     } else {
         alert("Error Occured, please refresh the browser");
     }
@@ -251,9 +278,9 @@ function saveUserInput(_variable_, _userAnswer_) {
 };;;
 */
 
-function autoShowAnswer() {
+function autoShowAnswer(_variable_) {
     const options = document.getElementsByClassName("option");
-    const answer = question1[0].answer;
+    const answer = _variable_[0].answer;
 
     for (let j = 0; j < options.length; j++) {
         if (options[j].textContent === answer) {
@@ -328,13 +355,6 @@ function saveUserInput1() {
         freezeOptions();
     } else {
         alert("Error Occurred, please refresh the browser.");
-    }
-}
-
-function removeEventListeners() {
-    const options_ = document.getElementsByClassName("option");
-    for (let i = 0; i < options_.length; i++) {
-        options_[i].removeEventListener("click", saveUserInput);
     }
 }
 
