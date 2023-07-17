@@ -63,11 +63,11 @@ body {
 
 .info_box {
     width: 540px;
-    /*Check this */
     opacity: 0;
     pointer-events: none;
     transition: all 0, 3s ease;
     background: white;
+    border-radius: 10px;
 }
 
 .info_box .info-title {
@@ -89,10 +89,6 @@ body {
 .info_box .infolist .info {
     margin: 5px 0;
     font-size: 15px;
-}
-
-.info_box .infolist .info span {
-    color: red;
 }
 
 .info_box .buttons {
@@ -130,7 +126,7 @@ body {
     transition: all 0.3 ease;
 }
 
-.quiz_box header {
+.quiz-header {
     position: relative;
     z-index: 2;
     height: 4.375rem;
@@ -142,13 +138,13 @@ body {
     justify-content: space-between;
 }
 
-.quiz_box header .title {
+.quiz-header .title {
     text-decoration: underline;
     font-size: 20px;
     font-family: 'Roboto Slab', serif;
 }
 
-.quiz_box header .timer {
+.quiz-header .timer {
     color: #50C878;
     background: white;
     border: 1px solid white;
@@ -161,13 +157,13 @@ body {
     width: 9.063rem;
 }
 
-.quiz_box header .timer .time_left_txt {
+.quiz-header .timer .time_left_txt {
     font-weight: 400;
     font-size: 17px;
     user-select: none;
 }
 
-.quiz_box header .timer .timer_sec {
+.quiz-header .timer_sec {
     font-size: 18px;
     height: 30px;
     width: 45px;
