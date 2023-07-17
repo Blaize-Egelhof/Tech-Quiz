@@ -1,7 +1,3 @@
-//DISCLAIMER , I need to explain this code in detail so that I dont get confused !
-// create an array that holds first question,answer and options. 
-//My logic is IF answer === to 1 of the options then its correct , run a function
-//Variable which has an array assigned to it, the array has an object, said object has properties .
 document.addEventListener("DOMContentLoaded", function () {
     rightOrWrong();
 });
@@ -36,11 +32,66 @@ let question2 = [
 
 let question3 = [
     {
-        question: "What is my Name?",
-        answer: "Blaize",
-        options: ["Sarah", "Blaize", "Bert", "Calvin"]
+        question: "What does RAM stand for?",
+        answer: "Random Access Memory",
+        options: ["Random Access Memory", "Read-Only Memory", "Randomly Allocated Memory", "Rapid Application Memory"]
     }
+];
 
+let question4 = [
+    {
+        question: "Which programming language is often used for web development?",
+        answer: "JavaScript",
+        options: ["Java", "Python", "C++", "JavaScript"]
+    }
+];
+
+let question5 = [
+    {
+        question: "What does HTML stand for?",
+        answer: "Hypertext Markup Language",
+        options: ["Hypertext Markup Language", "Hyperlink Textual Markup Language", "Home Tool Markup Language", "Hypermedia Text Management Language"]
+    }
+];
+
+let question6 = [
+    {
+        question: "What is the main function of a firewall?",
+        answer: "To protect a network from unauthorized access",
+        options: ["To speed up internet connection", "To create backups of data", "To protect a network from unauthorized access", "To analyze computer performance"]
+    }
+];
+
+let question7 = [
+    {
+        question: "What is the purpose of an IP address?",
+        answer: "To uniquely identify a device on a network",
+        options: ["To connect to a wireless network", "To determine the internet speed", "To uniquely identify a device on a network", "To install new software"]
+    }
+];
+
+let question8 = [
+    {
+        question: "What is a SQL database used for?",
+        answer: "Storing and managing relational data",
+        options: ["Creating animations", "Storing and managing relational data", "Playing video games", "Editing images"]
+    }
+];
+
+let question9 = [
+    {
+        question: "What is the file extension for a Cascading Style Sheet?",
+        answer: ".css",
+        options: [".js", ".html", ".css", ".py"]
+    }
+];
+
+let question10 = [
+    {
+        question: "What technology allows you to run virtual machines?",
+        answer: "Hypervisor",
+        options: ["Compiler", "Hypervisor", "Debugger", "Interpreter"]
+    }
 ];
 
 let start_btn = document.querySelector('.start_btn_container > button');
@@ -92,9 +143,27 @@ function freezeOptions() {
 function enableNextButton() {
     document.querySelector('.next_btn').classList.remove('disabled');
 }
+function removeQuizBox() {
+    quiz_box.classList.remove("activeQuiz");
+}
+function showResultBox() {
+    document.getElementsByClassName("result_box")[0].classList.add("activeResult");
+}
+function userFeedbackOnResult(right) {
+    const emojiElement = document.getElementsByClassName("end_emojie")[0];
+    const completeTextElement = document.getElementsByClassName("complete_text")[0];
 
-//function to respond to when user clicks Continue Quiz button on info box
-//On click remove info_box and show quiz_box
+    if (right <= 3) {
+        emojiElement.innerHTML = '<i class="fas fa-sad-tear fa-bounce"></i>';
+        completeTextElement.textContent = `Sorry, you scored ${right} out of 10, please consider re-taking the quiz!`;
+    } else if (right <= 5) {
+        emojiElement.innerHTML = '<i class="fa-light fa-thumbs-up fa-bounce"></i>';
+        completeTextElement.textContent = `Nice! You scored ${right} out of 10, however, you should revise your work!`;
+    } else if (right >= 7) {
+        emojiElement.innerHTML = '<i class="fa-light fa-face-smile"></i>';
+        completeTextElement.textContent = `Well Done! You scored ${right} out of 10, keep working hard!`;
+    }
+}
 
 continue_btn.onclick = function openQuizBox() {
     console.log('BUTTON IS CLICKED');
@@ -127,6 +196,73 @@ next_btn.onclick = function () {
             rightOrWrong();
             startTimer(20, question3[0].answer);
             break;
+        case 3:
+            ClearQuiz();
+            showQuestion(question4);
+            showOptions(question4);
+            unfreezeOptions();
+            transparentNextButton();
+            rightOrWrong();
+            startTimer(20, question4[0].answer);
+            break;
+        case 4:
+            ClearQuiz();
+            showQuestion(question5);
+            showOptions(question5);
+            unfreezeOptions();
+            transparentNextButton();
+            rightOrWrong();
+            startTimer(20, question5[0].answer);
+            break;
+        case 5:
+            ClearQuiz();
+            showQuestion(question6);
+            showOptions(question6);
+            unfreezeOptions();
+            transparentNextButton();
+            rightOrWrong();
+            startTimer(20, question6[0].answer);
+            break;
+        case 6:
+            ClearQuiz();
+            showQuestion(question7);
+            showOptions(question7);
+            unfreezeOptions();
+            transparentNextButton();
+            rightOrWrong();
+            startTimer(20, question7[0].answer);
+            break;
+        case 7:
+            ClearQuiz();
+            showQuestion(question8);
+            showOptions(question8);
+            unfreezeOptions();
+            transparentNextButton();
+            rightOrWrong();
+            startTimer(20, question8[0].answer);
+            break;
+        case 8:
+            ClearQuiz();
+            showQuestion(question9);
+            showOptions(question9);
+            unfreezeOptions();
+            transparentNextButton();
+            rightOrWrong();
+            startTimer(20, question9[0].answer);
+            break;
+        case 9:
+            ClearQuiz();
+            showQuestion(question10);
+            showOptions(question10);
+            unfreezeOptions();
+            transparentNextButton();
+            rightOrWrong();
+            startTimer(20, question10[0].answer);
+            break;
+        case 10:
+            removeQuizBox();
+            showResultBox();
+            userFeedbackOnResult(right);
     };
 };
 let timer; // Declare a global variable to store the timer
@@ -173,11 +309,6 @@ function stopTimer() {
     isTimerRunning = false; // Set isTimerRunning to false to stop the timer
 }
 
-
-
-//create a function to show the correct answer , without needing a users input
-
-
 //create a function to show question
 function showQuestion(_question_) {
 
@@ -185,7 +316,7 @@ function showQuestion(_question_) {
     questionText.innerHTML = _question_[0].question;  //Look at question1 variable , select index 0 object and focus on the .question property.
 }
 
-// THE CLONING SYTAX was taken from stackoverflow. 
+// THE CLONING SYTAX was taken from stackoverflow
 function showOptions(_question_) {
     const optionContainer = document.getElementsByClassName('option_list')[0];
     const optionElements = document.getElementsByClassName('option');

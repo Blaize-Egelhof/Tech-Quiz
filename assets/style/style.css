@@ -331,6 +331,8 @@ footer button .restart_quiz {
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
+    font-family: 'Roboto Slab', serif;
+    border-radius: 18px;
 }
 
 .result_box .icon {
@@ -343,6 +345,8 @@ footer button .restart_quiz {
     font-size: 14px;
     font-weight: 500;
 }
+
+
 
 .result_box .score_text span {
     display: flex;
@@ -371,7 +375,13 @@ footer button .restart_quiz {
     border: none;
     outline: none;
     border-radius: 5px;
-    border: 1px solid green;
+    border: 1px solid black;
+    transition: all 0.3s ease;
+}
+
+.result_box .buttons button:hover {
+    letter-spacing: 1px;
+    text-decoration: underline;
     transition: all 0.3s ease;
 }
 
