@@ -46,8 +46,6 @@ let question3 = [
 
 ];
 
-// Start Page Buttons
-
 let start_btn = document.querySelector('.start_btn_container > button');
 let feedback_btn = document.querySelector('.start_btn_container > button')[1];
 let info_box = document.getElementsByClassName('info_box')[0];
@@ -56,10 +54,7 @@ let continue_btn = document.getElementsByClassName('continue')[0];
 let quiz_box = document.getElementsByClassName('quiz_box')[0];
 var right = 0;
 var wrong = 0;
-
 let next_btn = document.getElementsByClassName('next_btn')[0];
-
-
 
 //function to respond to when start quiz button is clicked
 //On click activate the class to reveal rules of quiz and disable class for front page
@@ -131,7 +126,7 @@ function startTimer(time, answer) {
     clearInterval(timer); // Clear the previous timer (if any)
 
     let timeLeft = time;
-    const timerElement = document.querySelector(".timer_sec");
+    const timerElement = quizFooter.querySelector(".timer_sec");
 
     if (timerElement) {
         timerElement.textContent = timeLeft;
@@ -204,9 +199,6 @@ function showOptions(_question_) {
     }
 }
 
-
-
-
 function saveUserInput(_variable_, _userAnswer_) {
     const options = document.getElementsByClassName("option");
     const userAnswer = this.textContent;
@@ -247,46 +239,6 @@ function saveUserInput(_variable_, _userAnswer_) {
     }
 }
 
-
-/*function showCorrectAnswer(_answer_) {
-    const options = document.getElementsByClassName("option");
-    const answer = _answer_[0].answer;
- 
- 
-    for (let i = 0; i < options.length; i++) {
-        options[i].addEventListener("click", function saveUserInput() {
-            const userAnswer = this.textContent;
- 
-            for (let j = 0; j < options.length; j++) {
-                if (options[j].textContent === answer) {
-                    options[j].classList.add("correct");
-                } else {
-                    options[j].classList.add("incorrect");
-                }
-            }
- 
-            if (userAnswer === answer) {
-                alert("Correct!");
-                right++;
-            } else {
-                alert("Wrong!");
-                wrong++;
-            }
-            document.getElementsByClassName("r_or_w_txt")[0].innerHTML = right;
-            document.getElementsByClassName("r_or_w_txt")[1].innerHTML = wrong;
- 
-            if (userAnswer !== "") {
-                workingNextButton();
-                freezeOptions();
- 
-            } else {
-                alert("Error Occured , please refresh browser");
-            }
-        });
-    }
-};;;
-*/
-
 function autoShowAnswer(_variable_) {
     const options = document.getElementsByClassName("option");
     const answer = _variable_;
@@ -302,7 +254,7 @@ function autoShowAnswer(_variable_) {
 }
 
 function ClearQuiz() {
-    const questionText = document.getElementsByClassName('question_text')[0];
+    const questionText = document.getElementsByClassName('option');
     questionText.innerHTML = '';
 
     const optionElements = document.getElementsByClassName('option');

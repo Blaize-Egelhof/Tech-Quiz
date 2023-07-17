@@ -244,7 +244,7 @@ section .option_list .option.disabled {
     pointer-events: none;
 }
 
-footer {
+.quiz_footer {
     height: 60px;
     display: flex;
     align-items: center;
@@ -252,20 +252,11 @@ footer {
     border-top: 1px solid lightgrey;
 }
 
-footer .total_questions {
-    display: flex;
-    user-select: none;
-}
-
-footer .total_questions span p {
-    padding: 0 5px;
-}
-
-footer .total_questions span p:first-child {
+.quiz_footer p:first-child {
     padding-left: 0px;
 }
 
-footer button {
+.quiz_footer button {
     height: 40px;
     padding: 0 13px;
     font-size: 14px;
@@ -312,13 +303,13 @@ footer button:hover {
     background: white;
 }
 
-footer button.next_btn.working {
+.next_btn.working {
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
 }
 
-footer button.next_btn.disabled {
+.next_btn.disabled {
     opacity: 0;
     pointer-events: none;
     transform: scale(1);
