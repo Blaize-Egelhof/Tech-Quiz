@@ -96,6 +96,9 @@ function freezeOptions() {
     freeze.classList.add("disabled");
 
 }
+function enableNextButton() {
+    document.querySelector('.next_btn').classList.remove('disabled');
+}
 
 //function to respond to when user clicks Continue Quiz button on info box
 //On click remove info_box and show quiz_box
@@ -107,7 +110,7 @@ continue_btn.onclick = function openQuizBox() {
     showQuestion(question1);
     showOptions(question1);
     rightOrWrong();
-    startTimer(20);
+    startTimer(20, question1[0].answer);
 
 };
 
@@ -118,13 +121,13 @@ next_btn.onclick = function startNewQuiz1() {
     unfreezeOptions();
     transparentNextButton();
     rightOrWrong();
-    startTimer(20);
+    startTimer(20, question2[0].answer);
 };
 
 let timer; // Declare a global variable to store the timer
 let isTimerRunning = false; // Track the status of the timer
 
-function startTimer(time) {
+function startTimer(time, answer) {
     clearInterval(timer); // Clear the previous timer (if any)
 
     let timeLeft = time;
@@ -153,8 +156,9 @@ function startTimer(time) {
             alert("Time is up!");
             wrong++;
             rightOrWrong();
-            autoShowAnswer(question1);
+            autoShowAnswer(answer);
             freezeOptions();
+            enableNextButton();
             workingNextButton();
         }
     }, 1000);
@@ -220,16 +224,21 @@ function saveUserInput(_variable_, _userAnswer_) {
         alert("Correct!");
         right++;
         stopTimer();
+        enableNextButton();
+        workingNextButton();
     } else {
         alert("Wrong!");
         wrong++;
         stopTimer();
+        enableNextButton();
+        workingNextButton();
     }
 
     document.getElementsByClassName("r_or_w_txt")[0].innerHTML = right;
     document.getElementsByClassName("r_or_w_txt")[1].innerHTML = wrong;
 
     if (_userAnswer_ !== "") {
+        enableNextButton();
         workingNextButton();
         freezeOptions();
         stopTimer();
@@ -280,7 +289,7 @@ function saveUserInput(_variable_, _userAnswer_) {
 
 function autoShowAnswer(_variable_) {
     const options = document.getElementsByClassName("option");
-    const answer = _variable_[0].answer;
+    const answer = _variable_;
 
     for (let j = 0; j < options.length; j++) {
         if (options[j].textContent === answer) {
