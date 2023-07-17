@@ -18,7 +18,6 @@ function rightOrWrong() {
 
 let question1 = [
     {
-        num1: 1,
         question: "What does CPU stand for?",
         answer: "Central Processing Unit",
         options: ["Central Processing Unit", "Central Peering Unit ", "Conjuncted Pile Unity ", "Centering Pivot Unit"]
@@ -28,7 +27,6 @@ let question1 = [
 
 let question2 = [
     {
-        num2: 2,
         question: "What OS system is the fastest out of the below options?",
         answer: "Linux",
         options: ["Windows 10", "Windows 11", "Linux", "MacOS"]
@@ -38,10 +36,9 @@ let question2 = [
 
 let question3 = [
     {
-        num3: 3,
-        question: "What OS system is the fastest out of the below options?",
-        answer: "Linux",
-        options: ["Windows 10", "Windows 11", "Linux", "MacOS"]
+        question: "What is my Name?",
+        answer: "Blaize",
+        options: ["Sarah", "Blaize", "Bert", "Calvin"]
     }
 
 ];
@@ -55,6 +52,7 @@ let quiz_box = document.getElementsByClassName('quiz_box')[0];
 var right = 0;
 var wrong = 0;
 let next_btn = document.getElementsByClassName('next_btn')[0];
+let quizCount = 0;
 
 //function to respond to when start quiz button is clicked
 //On click activate the class to reveal rules of quiz and disable class for front page
@@ -106,19 +104,31 @@ continue_btn.onclick = function openQuizBox() {
     showOptions(question1);
     rightOrWrong();
     startTimer(20, question1[0].answer);
-
 };
+next_btn.onclick = function () {
+    quizCount++;
 
-next_btn.onclick = function startNewQuiz1() {
-    ClearQuiz();
-    showQuestion(question2);
-    showOptions(question2);
-    unfreezeOptions();
-    transparentNextButton();
-    rightOrWrong();
-    startTimer(20, question2[0].answer);
+    switch (quizCount) {
+        case 1:
+            ClearQuiz();
+            showQuestion(question2);
+            showOptions(question2);
+            unfreezeOptions();
+            transparentNextButton();
+            rightOrWrong();
+            startTimer(20, question2[0].answer);
+            break;
+        case 2:
+            ClearQuiz();
+            showQuestion(question3);
+            showOptions(question3);
+            unfreezeOptions();
+            transparentNextButton();
+            rightOrWrong();
+            startTimer(20, question3[0].answer);
+            break;
+    };
 };
-
 let timer; // Declare a global variable to store the timer
 let isTimerRunning = false; // Track the status of the timer
 
@@ -126,7 +136,7 @@ function startTimer(time, answer) {
     clearInterval(timer); // Clear the previous timer (if any)
 
     let timeLeft = time;
-    const timerElement = quizFooter.querySelector(".timer_sec");
+    const timerElement = document.querySelector(".timer_sec");
 
     if (timerElement) {
         timerElement.textContent = timeLeft;
@@ -278,7 +288,6 @@ function clearOptionsStyling() {
         }
     }
 }
-
 
 function showCorrectAnswer1() {
     const options1 = document.getElementsByClassName("option");
