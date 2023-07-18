@@ -231,9 +231,8 @@ section .option-list .option:last-child {
 }
 
 section .option-list .option:hover {
-    color: black;
-    background: white;
     border: 1px solid black;
+    
 }
 
 section .option-list .option.disabled {
@@ -399,10 +398,12 @@ footer {
         color: white;
         white-space: nowrap;
         opacity: 1;
-        width: 100%;
+        width: 99%;
         display: flex;
         justify-content: center;
         top: 93%;
+        overflow: hidden;
+        position: absolute;
 }
 
 footer .hide {
@@ -410,6 +411,13 @@ footer .hide {
 }
 
 /* start of Media Queries */
+
+@media screen and (max-width: 730px){
+    section .option-list .option:hover{
+        border:1px solid inherit;
+    }
+
+} 
 @media screen and (max-width: 660px) {
     body {
         overflow: hidden;
