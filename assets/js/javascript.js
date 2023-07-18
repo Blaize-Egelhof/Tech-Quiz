@@ -88,16 +88,15 @@ let question10 = [
     }
 ];
 
-let start_btn = document.querySelector('.start_btn_container > button');
-let feedback_btn = document.querySelector('.start_btn_container > button')[1];
-let info_box = document.getElementsByClassName('info_box')[0];
-let quit_btn = document.getElementsByClassName('quit')[0];
-let quit_btn1 = document.getElementsByClassName('quit')[1];
+let startBtn = document.querySelector('.start-btn-container > button');
+let infoBox = document.getElementsByClassName('info-box')[0];
+let quitBtn = document.getElementsByClassName('quit')[0];
+let quitBtn1 = document.getElementsByClassName('quit')[1];
 let continue_btn = document.getElementsByClassName('continue')[0];
-let quiz_box = document.getElementsByClassName('quiz_box')[0];
+let quizBox = document.getElementsByClassName('quiz-box')[0];
 var right = 0;
 var wrong = 0;
-let next_btn = document.getElementsByClassName('next_btn')[0];
+let nextBtn = document.getElementsByClassName('next-btn')[0];
 let quizCount = 0;
 let restart_btn = document.getElementsByClassName('restart')[0];
 let timer; // Declare a global variable to store the timer
@@ -106,22 +105,22 @@ let isTimerRunning = false; // Track the status of the timer
 //function to respond to when start quiz button is clicked
 //On click activate the class to reveal rules of quiz and disable class for front page
 
-start_btn.onclick = function showQuizRules() {
+startBtn.onclick = function showQuizRules() {
     console.log('BUTTON IS CLICKED');
-    info_box.classList.add("activeInfo");  //show info box
+    infoBox.classList.add("activeInfo");  //show info box
     hideFooter();
 };
 
 //On click  remove the activate class to hide info box.
 
-quit_btn.onclick = function hideQuizRules() {
+quitBtn.onclick = function hideQuizRules() {
     console.log('BUTTON IS CLICKED');
-    info_box.classList.remove("activeInfo");
+    infoBox.classList.remove("activeInfo");
 };
 
 //On click , reload browser window
 
-quit_btn1.onclick = function () {
+quitBtn1.onclick = function () {
     location.reload();
 };
 //On click , reload browser window
@@ -132,27 +131,27 @@ restart_btn.onclick = function () {
 
 //function targets the next button and assigns a working class to it which allows pointer events (default its set as none)
 function workingNextButton() {
-    document.getElementsByClassName("next_btn")[0].classList.add("working");
+    document.getElementsByClassName("next-btn")[0].classList.add("working");
 }
 //function revels the next button to a user.
 function transparentNextButton() {
-    document.getElementsByClassName("next_btn")[0].classList.add("disabled");
+    document.getElementsByClassName("next-btn")[0].classList.add("disabled");
 }
 
 //function to freeze the option elements to prevent users from inputting multiple answers at once.
 function freezeOptions() {
-    let freeze = document.getElementsByClassName("option_list")[0];
+    let freeze = document.getElementsByClassName("option-list")[0];
     freeze.classList.add("disabled");
 
 }
 //removes elements class which sets pointer events to none
 function enableNextButton() {
-    document.querySelector('.next_btn').classList.remove('disabled');
+    document.querySelector('.next-btn').classList.remove('disabled');
 }
 
 //removes the main Quizbox when the user is done with all 10 questions
 function removeQuizBox() {
-    quiz_box.classList.remove("activeQuiz");
+    quizBox.classList.remove("activeQuiz");
 }
 
 function hideFooter() {
@@ -162,11 +161,11 @@ function hideFooter() {
 
 //reveals the resultbox which shows the users results
 function showResultBox() {
-    document.getElementsByClassName("result_box")[0].classList.add("activeResult");
+    document.getElementsByClassName("result-box")[0].classList.add("activeResult");
 }
 //function which displays different template literals based on the users score which is assigned to the variable right (out of 10)
 function userFeedbackOnResult(right) {
-    const emojiElement = document.getElementsByClassName("end_emojie")[0];
+    const emojiElement = document.getElementsByClassName("end-emojie")[0];
     const completeTextElement = document.getElementsByClassName("complete_text")[0];
 
     if (right <= 3) {
@@ -186,8 +185,8 @@ function userFeedbackOnResult(right) {
 
 continue_btn.onclick = function openQuizBox() {
     console.log('BUTTON IS CLICKED');
-    info_box.classList.remove("activeInfo");
-    quiz_box.classList.add("activeQuiz");
+    infoBox.classList.remove("activeInfo");
+    quizBox.classList.add("activeQuiz");
     showQuestion(question1);
     showOptions(question1);
     rightOrWrong();
@@ -196,9 +195,9 @@ continue_btn.onclick = function openQuizBox() {
 
 /**
  * Switch case which is used to populate the next set of questions for the user
- * @param {number} quizCount - this parameter holds the number of onclick presses of the next_btn and executes the apprpriate classes.
+ * @param {number} quizCount - this parameter holds the number of onclick presses of the nextBtn and executes the apprpriate classes.
  */
-next_btn.onclick = function () {
+nextBtn.onclick = function () {
     quizCount++;
 
     switch (quizCount) {
@@ -303,7 +302,7 @@ function startTimer(time, answer) {
     clearInterval(timer); // Clear the previous timer (if any)
 
     let timeLeft = time;
-    const timerElement = document.querySelector(".timer_sec");
+    const timerElement = document.querySelector(".timer-sec");
 
     if (timerElement) {
         timerElement.textContent = timeLeft;
@@ -346,7 +345,7 @@ function stopTimer() {
  * @param {Array} _question_ - The question object to be displayed.
  */
 function showQuestion(_question_) {
-    let questionText = document.getElementsByClassName('question_text')[0];   //target the div which will contain the question
+    let questionText = document.getElementsByClassName('question-text')[0];   //target the div which will contain the question
     questionText.innerHTML = _question_[0].question;  //Look at question1 variable , select index 0 object and focus on the .question property.
 }
 /**
@@ -355,7 +354,7 @@ function showQuestion(_question_) {
  * Iterates over the given options.textContent and removes all prior styling, ensuring the options elements and cleared from last function called
  */
 function showOptions(_question_) {
-    const optionContainer = document.getElementsByClassName('option_list')[0];
+    const optionContainer = document.getElementsByClassName('option-list')[0];
     const optionElements = document.getElementsByClassName('option');
     const options = _question_[0].options;
 
@@ -410,8 +409,8 @@ function saveUserInput(_variable_, _userAnswer_) {
         workingNextButton();
     }
 
-    document.getElementsByClassName("r_or_w_txt")[0].innerHTML = right;
-    document.getElementsByClassName("r_or_w_txt")[1].innerHTML = wrong;
+    document.getElementsByClassName("r-or-w-txt")[0].innerHTML = right;
+    document.getElementsByClassName("r-or-w-txt")[1].innerHTML = wrong;
 
     if (_userAnswer_ !== "") {
         enableNextButton();
@@ -457,7 +456,7 @@ function ClearQuiz() {
  */
 
 function unfreezeOptions() {
-    let unfreeze = document.getElementsByClassName("option_list")[0];
+    let unfreeze = document.getElementsByClassName("option-list")[0];
     unfreeze.classList.add("enabled");
 }
 
@@ -481,8 +480,8 @@ function clearOptionsStyling() {
  */
 
 function rightOrWrong() {
-    const rightTxt = document.getElementsByClassName("r_or_w_txt")[0];
-    const wrongTxt = document.getElementsByClassName("r_or_w_txt")[1];
+    const rightTxt = document.getElementsByClassName("r-or-w-txt")[0];
+    const wrongTxt = document.getElementsByClassName("r-or-w-txt")[1];
 
     rightTxt.innerHTML = right;
     wrongTxt.innerHTML = wrong;

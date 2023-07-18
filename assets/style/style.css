@@ -7,19 +7,19 @@ body {
     background: blue;
 }
 
-.start_btn,
-.info_box,
-.quiz_box,
-.result_box {
+.start-btn,
+.info-box,
+.quiz-box,
+.result-box {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.info_box.activeInfo,
-.quiz_box.activeQuiz,
-.result_box.activeResult {
+.info-box.activeInfo,
+.quiz-box.activeQuiz,
+.result-box.activeResult {
     opacity: 1;
     z-index: 5;
     pointer-events: auto;
@@ -27,17 +27,17 @@ body {
     transition: all 0.3s ease;
 }
 
-.start_btn {
+.start-btn {
     cursor: pointer;
 }
 
-.start_btn_container {
+.start-btn-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.start_btn_container button {
+.start-btn-container button {
     width: 50%;
     padding: 10px 0 10px 0;
     margin: 5px;
@@ -46,14 +46,14 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
-.start_btn_container button:hover {
+.start-btn-container button:hover {
     letter-spacing: 1px;
     text-decoration: underline;
     transition: all 0.3s ease;
     font-family: 'Roboto Slab', serif;
 }
 
-.welcome_title h1 {
+.welcome-title h1 {
     padding-bottom: 20px;
     font-size: 35px;
     white-space: nowrap;
@@ -61,7 +61,7 @@ body {
     text-decoration: underline;
 }
 
-.info_box {
+.info-box {
     width: 475px;
     opacity: 0;
     pointer-events: none;
@@ -70,7 +70,7 @@ body {
     border-radius: 10px;
 }
 
-.info_box .info-title {
+.info-box .info-title {
     height: 3.75rem;
     width: 100%;
     display: flex;
@@ -81,17 +81,17 @@ body {
     text-decoration: underline;
 }
 
-.info_box .infolist {
+.info-box .infolist {
     padding: 15px 30px;
     font-family: 'Roboto Slab', serif;
 }
 
-.info_box .infolist .info {
+.info-box .infolist .info {
     margin: 5px 0;
     font-size: 15px;
 }
 
-.info_box .buttons {
+.info-box .buttons {
     height: 3.75rem;
     display: flex;
     align-items: center;
@@ -100,7 +100,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.info_box .buttons button {
+.info-box .buttons button {
     margin: 0 5px;
     height: 2.5rem;
     width: 6.25rem;
@@ -112,12 +112,12 @@ body {
     border-radius: 13px;
 }
 
-.info_box .buttons button:hover {
+.info-box .buttons button:hover {
     letter-spacing: 1px;
     text-decoration: underline;
 }
 
-.quiz_box {
+.quiz-box {
     width: 34.375rem;
     background: white;
     transform: translate(-50%, -50%) scale(0.9);
@@ -157,13 +157,13 @@ body {
     width: 9.063rem;
 }
 
-.quiz-header .timer .time_left_txt {
+.quiz-header .timer .time-left-txt {
     font-weight: 400;
     font-size: 17px;
     user-select: none;
 }
 
-.quiz-header .timer_sec {
+.quiz-header .timer-sec {
     font-size: 18px;
     height: 30px;
     width: 45px;
@@ -183,14 +183,14 @@ body {
     pointer-events: auto;
 }
 
-section .option_list .option.correct {
+section .option-list .option.correct {
     color: #155724;
     background: #d4edda;
     border: 1px solid green;
     transition: all 0.3s ease;
 }
 
-section .option_list .option.incorrect {
+section .option-list .option.incorrect {
     color: #721c24;
     background: #f8d7da;
     border: 1px solid red;
@@ -202,17 +202,17 @@ section {
     background: white;
 }
 
-section .question_text {
+section .question-text {
     font-size: 25px;
     font-family: 'Roboto Slab', serif;
 }
 
-section .option_list {
+section .option-list {
     display: block;
     padding: 20px 0px;
 }
 
-section .option_list .option {
+section .option-list .option {
     background: rgb(206, 213, 208);
     border: 1 px solid #84c5fe;
     border-radius: 5px;
@@ -226,21 +226,21 @@ section .option_list .option {
     justify-content: space-between;
 }
 
-section .option_list .option:last-child {
+section .option-list .option:last-child {
     margin-bottom: 0px;
 }
 
-section .option_list .option:hover {
+section .option-list .option:hover {
     color: black;
     background: white;
     border: 1px solid black;
 }
 
-section .option_list .option.disabled {
+section .option-list .option.disabled {
     pointer-events: none;
 }
 
-.quiz_footer {
+.quiz-footer {
     height: 60px;
     display: flex;
     align-items: center;
@@ -248,11 +248,11 @@ section .option_list .option.disabled {
     border-top: 1px solid lightgrey;
 }
 
-.quiz_footer p:first-child {
+.quiz-footer p:first-child {
     padding-left: 0px;
 }
 
-.quiz_footer button {
+.quiz-footer button {
     height: 40px;
     padding: 0 13px;
     font-size: 14px;
@@ -270,7 +270,7 @@ section .option_list .option.disabled {
     transition: all 0.3s ease;
 }
 
-.r_or_w {
+.r-or-w{
     height: 40px;
     padding: 0 12px;
     font-size: 14px;
@@ -299,13 +299,13 @@ footer button:hover {
     background: white;
 }
 
-.next_btn.working {
+.next-btn.working {
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
 }
 
-.next_btn.disabled {
+.next-btn.disabled {
     opacity: 0;
     pointer-events: none;
     transform: scale(1);
@@ -315,7 +315,7 @@ footer button .restart_quiz {
     padding-left: 500px;
 }
 
-.result_box {
+.result-box {
     background: white;
     display: flex;
     padding: 25px 30px;
@@ -331,37 +331,37 @@ footer button .restart_quiz {
     border-radius: 18px;
 }
 
-.result_box .icon {
+.result-box .icon {
     font-size: 20px;
     color: #50C878;
     margin-bottom: 10px;
 }
 
-.result_box .complete_text {
+.result-box .complete_text {
     font-size: 14px;
     font-weight: 500;
 }
 
 
 
-.result_box .score_text span {
+.result-box .score_text span {
     display: flex;
     margin: 10px;
     font-size: 8px;
     font-weight: 400;
 }
 
-.result_box .score_text span p {
+.result-box .score_text span p {
     padding: 0 4px;
     font-weight: 400;
 }
 
-.result_box .buttons {
+.result-box .buttons {
     display: flex;
     margin: 20px 0;
 }
 
-.result_box .buttons button {
+.result-box .buttons button {
     height: 45px;
     margin: 0 10px;
     padding: 0 20px;
@@ -375,7 +375,7 @@ footer button .restart_quiz {
     transition: all 0.3s ease;
 }
 
-.result_box .buttons button:hover {
+.result-box .buttons button:hover {
     letter-spacing: 1px;
     text-decoration: underline;
     transition: all 0.3s ease;
@@ -417,11 +417,11 @@ footer .hide {
 }
 
 @media screen and (max-width: 520px) {
-    .info_box .info-title {
+    .info-box .info-title {
         font-size: 25px;
     }
 
-    .info_box .infolist {
+    .info-box .infolist {
         padding: 10px 30px;
     }
 
@@ -429,23 +429,23 @@ footer .hide {
         font-size: 13px;
     }
 
-    .info_box .buttons button {
+    .info-box .buttons button {
         width: 5.25rem;
         font-size: 11px;
     }
 
-    .info_box {
+    .info-box {
         width: 385px;
     }
 
-    .info_box .infolist .info {
+    .info-box .infolist .info {
         font-size: 13px;
     }
 }
 
 @media screen and (max-width: 460px) {
 
-    .welcome_title h1 {
+    .welcome-title h1 {
         font-size: 25px
     }
 
@@ -455,24 +455,24 @@ footer .hide {
 }
 
 @media screen and (max-width: 414px) {
-    .info_box .info-title {
+    .info-box .info-title {
         font-size: 22px;
     }
 
-    .info_box .infolist .info {
+    .info-box .infolist .info {
         font-size: 12px;
         padding: 0px 15px;
     }
 
-    .info_box {
+    .info-box {
         width: 286px;
     }
 
-    .info_box .buttons {
+    .info-box .buttons {
         padding: 0 0px;
     }
 
-    .info_box .buttons button {
+    .info-box .buttons button {
         width: 4.25rem;
     }
 }
