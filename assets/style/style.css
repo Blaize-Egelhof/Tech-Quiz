@@ -394,3 +394,35 @@ footer button .restart_quiz {
     color: white;
     background: green;
 }
+
+footer {
+    position: absolute;
+    left: 80%;
+    top: 80%;
+    color: white;
+    white-space: nowrap;
+    transform: translate(-85%, -10%);
+    opacity: 1;
+}
+
+footer .hide {
+    opacity: 0;
+}
+
+/* start of Media Queries */
+@media screen and (max-width: 660px) {
+    body {
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 460px) {
+
+    .welcome_title {
+        font-size: 25px
+    }
+
+    footer {
+        font-size: 13px;
+    }
+}

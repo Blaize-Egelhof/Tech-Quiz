@@ -109,6 +109,7 @@ let isTimerRunning = false; // Track the status of the timer
 start_btn.onclick = function showQuizRules() {
     console.log('BUTTON IS CLICKED');
     info_box.classList.add("activeInfo");  //show info box
+    hideFooter();
 };
 
 //On click  remove the activate class to hide info box.
@@ -152,6 +153,11 @@ function enableNextButton() {
 //removes the main Quizbox when the user is done with all 10 questions
 function removeQuizBox() {
     quiz_box.classList.remove("activeQuiz");
+}
+
+function hideFooter() {
+    let footer_txt = document.getElementsByClassName('disclaimer')[0];
+    footer_txt.classList.add('hide');
 }
 
 //reveals the resultbox which shows the users results
