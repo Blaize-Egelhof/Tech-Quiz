@@ -92,13 +92,13 @@ let startBtn = document.querySelector('.start-btn-container > button');
 let infoBox = document.getElementsByClassName('info-box')[0];
 let quitBtn = document.getElementsByClassName('quit')[0];
 let quitBtn1 = document.getElementsByClassName('quit')[1];
-let continue_btn = document.getElementsByClassName('continue')[0];
+let continueBtn = document.getElementsByClassName('continue')[0];
 let quizBox = document.getElementsByClassName('quiz-box')[0];
 var right = 0;
 var wrong = 0;
 let nextBtn = document.getElementsByClassName('next-btn')[0];
 let quizCount = 0;
-let restart_btn = document.getElementsByClassName('restart')[0];
+let restartBtn = document.getElementsByClassName('restart')[0];
 let timer; // Declare a global variable to store the timer
 let isTimerRunning = false; // Track the status of the timer
 
@@ -125,7 +125,7 @@ quitBtn1.onclick = function () {
 };
 //On click , reload browser window
 
-restart_btn.onclick = function () {
+restartBtn.onclick = function () {
     location.reload();
 };
 
@@ -149,14 +149,14 @@ function enableNextButton() {
     document.querySelector('.next-btn').classList.remove('disabled');
 }
 
-//removes the main Quizbox when the user is done with all 10 questions
+//removes the main Quizbox when the user is done with all 10 questions 
 function removeQuizBox() {
     quizBox.classList.remove("activeQuiz");
 }
 
 function hideFooter() {
-    let footer_txt = document.getElementsByClassName('disclaimer')[0];
-    footer_txt.classList.add('hide');
+    let footerTxt = document.getElementsByClassName('disclaimer')[0];
+    footerTxt.classList.add('hide');
 }
 
 //reveals the resultbox which shows the users results
@@ -166,7 +166,7 @@ function showResultBox() {
 //function which displays different template literals based on the users score which is assigned to the variable right (out of 10)
 function userFeedbackOnResult(right) {
     const emojiElement = document.getElementsByClassName("end-emojie")[0];
-    const completeTextElement = document.getElementsByClassName("complete_text")[0];
+    const completeTextElement = document.getElementsByClassName("complete-text")[0];
 
     if (right <= 3) {
         emojiElement.innerHTML = '<i class="fas fa-sad-tear fa-bounce"></i>';
@@ -183,7 +183,7 @@ function userFeedbackOnResult(right) {
  * function which removes the rules box and reveals the actual Quiz box , populating the first question
  */
 
-continue_btn.onclick = function openQuizBox() {
+continueBtn.onclick = function openQuizBox() {
     console.log('BUTTON IS CLICKED');
     infoBox.classList.remove("activeInfo");
     quizBox.classList.add("activeQuiz");
@@ -342,21 +342,21 @@ function stopTimer() {
 }
 /**
  * Displays the given question in the UI.
- * @param {Array} _question_ - The question object to be displayed.
+ * @param {Array} question - The question object to be displayed.
  */
-function showQuestion(_question_) {
+function showQuestion(question) {
     let questionText = document.getElementsByClassName('question-text')[0];   //target the div which will contain the question
-    questionText.innerHTML = _question_[0].question;  //Look at question1 variable , select index 0 object and focus on the .question property.
+    questionText.innerHTML = question[0].question;  //Look at question1 variable , select index 0 object and focus on the .question property.
 }
 /**
  * Displays the answer options for the given question.
- * @param {Array} _question_ - The question object containing the options to be displayed.
+ * @param {Array} question - The question object containing the options to be displayed.
  * Iterates over the given options.textContent and removes all prior styling, ensuring the options elements and cleared from last function called
  */
-function showOptions(_question_) {
+function showOptions(question) {
     const optionContainer = document.getElementsByClassName('option-list')[0];
     const optionElements = document.getElementsByClassName('option');
-    const options = _question_[0].options;
+    const options = question[0].options;
 
     // Clone the option container to remove all event listeners
     const newOptionContainer = optionContainer.cloneNode(true);
@@ -371,21 +371,21 @@ function showOptions(_question_) {
         newOptionElements[i].classList.remove("correct");
         newOptionElements[i].classList.remove("incorrect");
         newOptionElements[i].addEventListener("click", function () {
-            saveUserInput(_question_, newOptionElements[i].textContent);
+            saveUserInput(question, newOptionElements[i].textContent);
         });
     }
 }
 /**
  * Saves the user's answer and provides feedback on whether it's correct or incorrect.
- * @param {Array} _variable_ - The question object containing the answer and options.
- * @param {string} _userAnswer_ - The user's selected answer.
+ * @param {Array} actualAnswer - The question object containing the answer and options.
+ * @param {string} userAnswer1 - The user's selected answer.
  * function compares user answer with textContent present and applies styling to show the correct answer to the user when a user clicks on a button.
  */
 
-function saveUserInput(_variable_, _userAnswer_) {
+function saveUserInput(actualAnswer, userAnswer1) {
     const options = document.getElementsByClassName("option");
     const userAnswer = this.textContent;
-    const answer = _variable_[0].answer;
+    const answer = actualAnswer[0].answer;
 
     for (let j = 0; j < options.length; j++) {
         if (options[j].textContent === answer) {
@@ -395,7 +395,7 @@ function saveUserInput(_variable_, _userAnswer_) {
         }
     }
 
-    if (_userAnswer_ === answer) {
+    if (userAnswer1 === answer) {
         alert("Correct!");
         right++;
         stopTimer();
@@ -412,7 +412,7 @@ function saveUserInput(_variable_, _userAnswer_) {
     document.getElementsByClassName("r-or-w-txt")[0].innerHTML = right;
     document.getElementsByClassName("r-or-w-txt")[1].innerHTML = wrong;
 
-    if (_userAnswer_ !== "") {
+    if (userAnswer1 !== "") {
         enableNextButton();
         workingNextButton();
         freezeOptions();
@@ -423,12 +423,12 @@ function saveUserInput(_variable_, _userAnswer_) {
 }
 /**
  * Automatically shows the correct answer after the timer expires.
- * @param {string} _variable_ - The correct answer for the current question.
+ * @param {string} CorrectAnswer - The correct answer for the current question.
  * Function iterates over options elements and assigns appropriate classes to reveal the correct answer without user input
  */
-function autoShowAnswer(_variable_) {
+function autoShowAnswer(CorrectAnswer) {
     const options = document.getElementsByClassName("option");
-    const answer = _variable_;
+    const answer = CorrectAnswer;
 
     for (let j = 0; j < options.length; j++) {
         if (options[j].textContent === answer) {
@@ -485,6 +485,6 @@ function rightOrWrong() {
 
     rightTxt.innerHTML = right;
     wrongTxt.innerHTML = wrong;
-    rightTxt.classList.add("right_txt");
-    wrongTxt.classList.add("wrong_txt");
+    rightTxt.classList.add("right-txt");
+    wrongTxt.classList.add("wrong-txt");
 }
