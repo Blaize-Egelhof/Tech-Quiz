@@ -2,86 +2,104 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title and Favicon -->
     <title>Tech Quiz</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Header -->
+    <header>
+    </header>
     <!--Start Quiz Button-->
     <div class="start_btn">
-        <div class="welcome_title">Welcome to Tech Quiz!</div>
+        <!-- Welcome message -->
+        <div class="welcome_title"><h1>Welcome to Tech Quiz!</h1></div>
         <div class="start_btn_container">
             <button>Start Quiz!</button>
         </div>
     </div>
 
     <!--Info Box -->
-    <div class="info_box">
-        <div class="info-title">
-            <span>Some Rules of this Quiz</span>
+    <div class="info-box-container">
+        <!-- Box containing rules for the quiz -->
+        <div class="info_box">
+            <!-- Title of the rules section -->
+            <div class="info-title">
+                <span>Some Rules of this Quiz</span>
+            </div>
+            <!-- List of rules -->
+            <div class="infolist">
+                <div class="info">
+                    1. You will have only 20 seconds per each question.
+                </div>
+                <div class="info">
+                    2. Once an answer is given, it CANNOT be undone.
+                </div>
+                <div class="info">
+                    3. Once the timer runs out, you cannot select any other options.
+                </div>
+                <div class="info">
+                    4. Each correct answer will tally towards your final score!
+                </div>
+                <div class="info">
+                    5. This site is only intended for educational use.
+                </div>
+            </div>
+            <!-- Buttons -->
+            <div class="buttons">
+                <button class="quit">Exit Quiz</button>
+                <button class="continue">Continue Quiz</button>
+            </div>
         </div>
-        <div class="infolist">
-            <div class="info">
-                1. You will have only 20 seconds per each question.
-            </div>
-            <div class="info">
-                2.Once an answer is given, it CANNOT be undone.
-            </div>
-            <div class="info">
-                3.Once the timer runs out , you cannot select any other options.
-            </div>
-            <div class="info">
-                4.Each correct answer will tally towards your final score!
-            </div>
-            <div class="info">
-                5.This site is only intended for educational use.
-            </div>
-        </div>
-        <div class="buttons">
-            <button class="quit">Exit Quiz</button>
-            <button class="continue">Continue Quiz</button>
-        </div>
-
     </div>
-    <!--Quiz Box-->
-    <div class="quiz_box">
-        <section class="quiz-header">
-            <div class="title">Tech Quiz</div>
-            <div class="timer">
-                <div class="time_left_txt">Time Left</div>
-                <div class="timer_sec"></div>
-            </div>
-        </section>
-        <section>
-            <div class="question_text">
-                <!--These options will come from Javascript-->
-            </div>
-            <div class="option_list">
-                <div class="option"></div>
-                <div class="option"></div>
-                <div class="option"></div>
-                <div class="option"></div>
-                <!--These options will come from Javascript-->
-            </div>
-        </section>
+     <!-- Quiz Box Container -->
+        <!-- Quiz Box -->
+        <div class="quiz_box">
+             <!-- Quiz header -->
+           <section class="quiz-header">
+               <div class="title">Tech Quiz</div>
+                <div class="timer">
+                    <div class="time_left_txt">Time Left</div>
+                    <div class="timer_sec"></div>
+                </div>
+            </section>
+            <section>
+                <div class="question_text">
+                    <!-- Question text (options will come from Javascript) -->
+               </div>
+               <div class="option_list">
+                  <div class="option"></div>
+                 <div class="option"></div>
+                  <div class="option"></div>
+                  <div class="option"></div>
+                  <!-- Option list (options will come from Javascript) -->
+                </div>
+          </section>
+          <div class="info-box-container">
+</div>
 
         <!--Footer of Quiz Box-->
         <section class="quiz_footer">
             <div class="r_or_w">
+                <!-- Span elements for correct and wrong answers -->
                 <p>
                     <span class="r_or_w_txt"></span>
                     <span class="r_or_w_txt"></span>
                 </p>
             </div>
             <button class="next_btn">Next</button>
-
         </section>
     </div>
 
@@ -97,13 +115,15 @@
             <button class="restart">Reply Quiz</button>
             <button class="quit">Quit Quiz</button>
         </div>
-
     </div>
+     <!-- Footer with disclaimer text -->
+    <footer>
+        <p class="disclaimer">This site is intended for educational purposes only</p>
+    </footer>
+     <!-- Scripts -->
     <script src="assets/js/javascript.js"></script>
     <script src="https://kit.fontawesome.com/e5d47f9c86.js" crossorigin="anonymous"></script>
 </body>
-<footer>
-    <p class="disclaimer">This site is intended for educational purposes only</p>
-</footer>
+
 
 </html>

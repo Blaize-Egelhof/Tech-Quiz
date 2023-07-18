@@ -53,7 +53,7 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
-.welcome_title {
+.welcome_title h1 {
     padding-bottom: 20px;
     font-size: 35px;
     white-space: nowrap;
@@ -445,7 +445,7 @@ footer .hide {
 
 @media screen and (max-width: 460px) {
 
-    .welcome_title {
+    .welcome_title h1 {
         font-size: 25px
     }
 
