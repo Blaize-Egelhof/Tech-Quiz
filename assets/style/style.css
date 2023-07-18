@@ -396,13 +396,13 @@ footer button .restart_quiz {
 }
 
 footer {
-    position: absolute;
-    left: 80%;
-    top: 80%;
-    color: white;
-    white-space: nowrap;
-    transform: translate(-85%, -10%);
-    opacity: 1;
+        color: white;
+        white-space: nowrap;
+        opacity: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        top: 93%;
 }
 
 footer .hide {
