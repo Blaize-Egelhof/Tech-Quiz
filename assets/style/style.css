@@ -287,11 +287,11 @@ section .option-list .option.disabled {
     width: 8%;
 }
 
-.right_txt {
+.right-txt {
     color: green;
 }
 
-.wrong_txt {
+.wrong-txt {
     color: red;
 }
 

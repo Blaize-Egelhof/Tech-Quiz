@@ -371,21 +371,20 @@ function showOptions(question) {
         newOptionElements[i].classList.remove("correct");
         newOptionElements[i].classList.remove("incorrect");
         newOptionElements[i].addEventListener("click", function () {
-            saveUserInput(question, newOptionElements[i].textContent);
+            saveUserInput(question, newOptionElements[i].textContent,);
         });
     }
 }
 /**
  * Saves the user's answer and provides feedback on whether it's correct or incorrect.
- * @param {Array} actualAnswer - The question object containing the answer and options.
+ * @param {Array} questionList - The question object containing the answer and options.
  * @param {string} userAnswer1 - The user's selected answer.
  * function compares user answer with textContent present and applies styling to show the correct answer to the user when a user clicks on a button.
  */
 
-function saveUserInput(actualAnswer, userAnswer1) {
+function saveUserInput(questionList, userAnswer1) {
     const options = document.getElementsByClassName("option");
-    const userAnswer = this.textContent;
-    const answer = actualAnswer[0].answer;
+    const answer = questionList[0].answer;
 
     for (let j = 0; j < options.length; j++) {
         if (options[j].textContent === answer) {
@@ -393,7 +392,7 @@ function saveUserInput(actualAnswer, userAnswer1) {
         } else {
             options[j].classList.add("incorrect");
         }
-    }
+    } 
 
     if (userAnswer1 === answer) {
         alert("Correct!");
