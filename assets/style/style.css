@@ -172,11 +172,11 @@ body {
     font-size: 18px;
     height: 30px;
     width: 45px;
-    color: white;
-    border-radius: 5px;
+    color: black;
+    border:1px solid black ;
     line-height: 30px;
     text-align: center;
-    background: grey;
+    background: white;
     user-select: none;
 }
 /* class to be called in javascript when I need to disable users interactivity*/
@@ -297,7 +297,7 @@ section .option-list .option.disabled {
 }
 /* styles for quiz footer score incorrect text */
 .wrong-txt {
-    color: red;
+    color: darkred;
 }
 /* styles for quiz footer button on hover  */
 footer button:hover {
