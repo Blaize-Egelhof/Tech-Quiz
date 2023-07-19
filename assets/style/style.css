@@ -1,16 +1,18 @@
+/* Styles for the body element */
 body {
     background: #666362;
 }
-
+/* Styles for user selection */
 ::selection {
     color: white;
     background: blue;
 }
-
+/* Styles for user selection for firefox browsers */
 ::-moz-selection {
     color: white;
     background: blue;
 }
+/* Group of styles for all main html containers*/
 .start-btn,
 .info-box,
 .quiz-box,
@@ -20,7 +22,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+/* Active styling for main html containers */
 .info-box.activeInfo,
 .quiz-box.activeQuiz,
 .result-box.activeResult {
@@ -30,17 +32,17 @@ body {
     transform: translate(-50%, -50%) scale(1);
     transition: all 0.3s ease;
 }
-
+/* Style for main start quiz container */
 .start-btn {
     cursor: pointer;
 }
-
+/* Styles for main quiz contents */
 .start-btn-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+/* Styles for main quiz button */
 .start-btn-container button {
     width: 50%;
     padding: 10px 0 10px 0;
@@ -49,14 +51,14 @@ body {
     transition: all 0.3s ease;
     font-family: 'Roboto Slab', serif;
 }
-
+/* Styles for main quiz button */
 .start-btn-container button:hover {
     letter-spacing: 1px;
     text-decoration: underline;
     transition: all 0.3s ease;
     font-family: 'Roboto Slab', serif;
 }
-
+/* Styles for introduction text*/
 .welcome-title h1 {
     padding-bottom: 20px;
     font-size: 35px;
@@ -64,7 +66,7 @@ body {
     font-family: 'Roboto Slab', serif;
     text-decoration: underline;
 }
-
+/* Styles for information box  */
 .info-box {
     width: 475px;
     opacity: 0;
@@ -73,7 +75,7 @@ body {
     background: white;
     border-radius: 10px;
 }
-
+/* Styles for information box title */
 .info-box .info-title {
     width: fit-content;
     display: flex;
@@ -84,17 +86,17 @@ body {
     font-size: 28px;
     text-decoration: underline;
 }
-
+/* Styles for information box list of rules container  */
 .info-box .infolist {
     padding: 15px 30px;
     font-family: 'Roboto Slab', serif;
 }
-
+/* Styles for information box list of rules*/
 .info-box .infolist .info {
     margin: 5px 0;
     font-size: 15px;
 }
-
+/* Styles for information box button container*/
 .info-box .buttons {
     display: flex;
     align-items: center;
@@ -102,7 +104,7 @@ body {
     padding: 0 30px;
     transition: all 0.3s ease;
 }
-
+/* Styles for information box buttons*/
 .info-box .buttons button {
     margin: 0 5px;
     height: 2.5rem;
@@ -114,12 +116,12 @@ body {
     margin: 5px;
     border-radius: 13px;
 }
-
+/* Styles for information box buttons*/
 .info-box .buttons button:hover {
     letter-spacing: 1px;
     text-decoration: underline;
 }
-
+/* Styles for main quiz form container*/
 .quiz-box {
     width: 34.375rem;
     background: white;
@@ -128,7 +130,7 @@ body {
     pointer-events: none;
     transition: all 0.3 ease;
 }
-
+/* Styles for main quiz form header container*/
 .quiz-header {
     position: relative;
     z-index: 2;
@@ -140,13 +142,13 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-
+/* Styles for main quiz form title heading*/
 .quiz-header .title {
     text-decoration: underline;
     font-size: 20px;
     font-family: 'Roboto Slab', serif;
 }
-
+/* Styles for main quiz form timer container*/
 .quiz-header .timer {
     color: black;
     background: white;
@@ -159,13 +161,13 @@ body {
     justify-content: space-between;
     width: 9.063rem;
 }
-
+/* Styles for main quiz form timer container static text*/
 .quiz-header .timer .time-left-txt {
     font-weight: 400;
     font-size: 17px;
     user-select: none;
 }
-
+/* Styles for main quiz form timer container countdown text*/
 .quiz-header .timer-sec {
     font-size: 18px;
     height: 30px;
@@ -177,53 +179,55 @@ body {
     background: grey;
     user-select: none;
 }
-
+/* class to be called in javascript when I need to disable users interactivity*/
 .disabled {
     pointer-events: none;
 }
+/* class to be called in javascript when I need to disable users interactivity and make HTML element transparent*/
 .hidden{
     pointer-events: none ; 
     opacity: 0; 
 
 }
+/* class to be called in javascript when I need to reveal and add interactivity to a HTML element*/
 .revealed {
     pointer-events: auto ; 
     opacity: 1;
 }
-
+/* class to be called in javascript when I need to enable interactivity to a HTML element*/
 .enabled {
     pointer-events: auto;
 }
-
+/* class to be called in javascript to reveal correct answer*/
 section .option-list .option.correct {
     color: #155724;
     background: #d4edda;
     border: 1px solid green;
     transition: all 0.3s ease;
 }
-
+/* class to be called in javascript to reveal incorrect answers*/
 section .option-list .option.incorrect {
     color: #721c24;
     background: #f8d7da;
     border: 1px solid red;
     transition: all 0.3s ease;
 }
-
+/* styles for section element */
 section {
     padding: 25px 30px 20px 30px;
     background: white;
 }
-
+/* styles for section element */
 section .question-text {
     font-size: 25px;
     font-family: 'Roboto Slab', serif;
 }
-
+/* styles for option buttons container */
 section .option-list {
     display: block;
     padding: 20px 0px;
 }
-
+/* styles for option buttons*/
 section .option-list .option {
     background: rgb(206, 213, 208);
     border: 1 px solid #84c5fe;
@@ -237,31 +241,22 @@ section .option-list .option {
     align-items: center;
     justify-content: space-between;
 }
-
-section .option-list .option:last-child {
-    margin-bottom: 0px;
-}
-
+/* hover selector for option buttons */
 section .option-list .option:hover {
     border: 1px solid black;
-    
 }
-
+/* hover selector for option buttons to stop interactivity */
 section .option-list .option.disabled {
     pointer-events: none;
 }
-
+/* styles for quiz footer container */
 .quiz-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid lightgrey;
 }
-
-.quiz-footer p:first-child {
-    padding-left: 0px;
-}
-
+/* styles for quiz footer buttons */
 .quiz-footer button {
     height: 40px;
     padding: 0 13px;
@@ -279,7 +274,7 @@ section .option-list .option.disabled {
     transform: scale(0.95);
     transition: all 0.3s ease;
 }
-
+/* styles for quiz footer score tally container */
 .r-or-w{
     height: 40px;
     padding: 0 12px;
@@ -296,35 +291,31 @@ section .option-list .option.disabled {
     transition: all 0.3s ease;
     width: 8%;
 }
-
+/* styles for quiz footer score correct text */
 .right-txt {
     color: green;
 }
-
+/* styles for quiz footer score incorrect text */
 .wrong-txt {
     color: red;
 }
-
+/* styles for quiz footer button on hover  */
 footer button:hover {
     background: white;
 }
-
+/* styles for quiz footer button active class  */
 .next-btn.working {
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
 }
-
+/* styles for quiz footer button to disable  */
 .next-btn.disabled {
     opacity: 0;
     pointer-events: none;
     transform: scale(1);
 }
-
-footer button .restart_quiz {
-    padding-left: 500px;
-}
-
+/* styles for result box container  */
 .result-box {
     background: white;
     display: flex;
@@ -340,36 +331,30 @@ footer button .restart_quiz {
     font-family: 'Roboto Slab', serif;
     border-radius: 18px;
 }
-
-.result-box .icon {
-    font-size: 20px;
-    color: #50C878;
-    margin-bottom: 10px;
-}
-
+/* styles for result box completed text  */
 .result-box .complete-text {
     font-size: 14px;
     font-weight: 500;
     text-align: center;
 }
-
+/* styles for result box emojie  */
 .result-box .score_text span {
     display: flex;
     margin: 10px;
     font-size: 8px;
     font-weight: 400;
 }
-
+/* styles for result box text */
 .result-box .score_text span p {
     padding: 0 4px;
     font-weight: 400;
 }
-
+/* styles for result box button container*/
 .result-box .buttons {
     display: flex;
     margin: 20px 0;
 }
-
+/* styles for result box button */
 .result-box .buttons button {
     height: 45px;
     margin: 0 10px;
@@ -383,27 +368,27 @@ footer button .restart_quiz {
     border: 1px solid black;
     transition: all 0.3s ease;
 }
-
+/* styles for result box button on hover*/
 .result-box .buttons button:hover {
     letter-spacing: 1px;
     text-decoration: underline;
     transition: all 0.3s ease;
 }
-
+/* styles for result box restart button */
 .buttons button .restart {
     color: white;
     background: green;
 }
-
+/* styles for result box restart button on hover */
 .buttons button .restart:hover {
     background: grey;
 }
-
+/* styles for result box quit button */
 .buttons button .quit {
     color: white;
     background: green;
 }
-
+/* styles for footer */
 footer {
         color: white;
         white-space: nowrap;
@@ -415,20 +400,12 @@ footer {
         overflow: hidden;
         position: absolute;
 }
-
+/* styles for footer to hide it */
 footer .hide {
     opacity: 0;
 }
-
 /* start of Media Queries */
-
-/* Default styles */
-
-/* Add default styles here, these will be applied to all screen sizes */
-
-/* Media queries */
-
-/* For screen sizes up to 760px */
+/* For screen sizes up to 600px */
 @media screen and (max-width: 600px) {
     footer {
         top: auto;
@@ -474,7 +451,7 @@ footer .hide {
         border-radius: 18px;
     }
 }
-
+/* For screen sizes up to 510px */
 @media screen and (max-width: 510px) {
 
     .info-box {
@@ -505,6 +482,7 @@ footer .hide {
         /* height: 30px; */
     }
 }
+/* For screen sizes up to 395px */
 @media screen and (max-width: 395px) {
     .welcome-title h1 {
         font-size: 28px;
@@ -522,6 +500,7 @@ footer .hide {
         padding: 9px 10px;
     }
 }
+/* For screen sizes up to 359px */
 @media screen and (max-width: 359px) {
     .info-box .info-title {
         font-size: 24px;
@@ -535,7 +514,7 @@ footer .hide {
         border-radius: 5px 5px 0 0;
     }
 }
-
+/* For screen sizes up to 335px */
 @media screen and (max-width: 335px) {
     .welcome-title h1 {
         font-size: 26px;
