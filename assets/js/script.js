@@ -108,6 +108,7 @@ let isTimerRunning = false; // Track the status of the timer
 startBtn.onclick = function showQuizRules() {
     console.log('BUTTON IS CLICKED');
     infoBox.classList.add("activeInfo");  //show info box
+    hideMainMenu();
     hideFooter();
 };
 
@@ -116,6 +117,7 @@ startBtn.onclick = function showQuizRules() {
 quitBtn.onclick = function hideQuizRules() {
     console.log('BUTTON IS CLICKED');
     infoBox.classList.remove("activeInfo");
+    revealMainMenu();
 };
 
 //On click , reload browser window
@@ -153,10 +155,19 @@ function enableNextButton() {
 function removeQuizBox() {
     quizBox.classList.remove("activeQuiz");
 }
-
+//Hide footer section
 function hideFooter() {
     let footerTxt = document.getElementsByClassName('disclaimer')[0];
     footerTxt.classList.add('hide');
+}
+//Hide main menu from users 
+function hideMainMenu(){
+    document.getElementsByClassName("start-btn")[0].classList.add("hidden")
+}
+
+//reveal main menu for users
+function revealMainMenu(){
+    document.getElementsByClassName("start-btn")[0].classList.add("revealed")
 }
 
 //reveals the resultbox which shows the users results
