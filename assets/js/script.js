@@ -137,47 +137,52 @@ restartBtn.onclick = function () {
 //function targets the next button and assigns a working class to it which allows pointer events (default its set as none)
 function workingNextButton() {
     document.getElementsByClassName("next-btn")[0].classList.add("working");
-}
+};
 //function revels the next button to a user.
 function transparentNextButton() {
     document.getElementsByClassName("next-btn")[0].classList.add("disabled");
-}
+};
 
 //function to freeze the option elements to prevent users from inputting multiple answers at once.
 function freezeOptions() {
     let freeze = document.getElementsByClassName("option-list")[0];
     freeze.classList.add("disabled");
 
-}
+};
 //removes elements class which sets pointer events to none
 function enableNextButton() {
     document.querySelector('.next-btn').classList.remove('disabled');
-}
+};
 
 //removes the main Quizbox when the user is done with all 10 questions 
 function removeQuizBox() {
     quizBox.classList.remove("activeQuiz");
-}
+};
 //Hide footer section
 function hideFooter() {
     let footerTxt = document.getElementsByClassName('disclaimer')[0];
     footerTxt.classList.add('hide');
-}
+};
 //Hide main menu from users 
 function hideMainMenu(){
     document.getElementsByClassName("start-btn")[0].classList.add("hidden")
-}
+};
 
 //reveal main menu for users
 function revealMainMenu(){
     document.getElementsByClassName("start-btn")[0].classList.add("revealed")
-}
+};
 
 //reveals the resultbox which shows the users results
 function showResultBox() {
     document.getElementsByClassName("result-box")[0].classList.add("activeResult");
-}
-
+};
+/**
+ * newQuizScreen function removes any old questions and styling from the current quiz-box dom and replaces the altered elements with a new Quiz question from a different variable , checks answers and increments the right or wrong variable while resetting timer number value
+ * @param {variable} questionVariable - Actual variable which contains all information relating to the question
+ * @param {number} timerStartPoint  - number value given to the start timer function , this number represents a start point for the timer and the number which ticks down in 1 second increments
+ * @param {variable property} questionAnswer -same variable used in questionVariable , but targetting the property .answer
+ */
 function newQuizScreen(questionVariable , timerStartPoint , questionAnswer) {
     ClearQuiz();
     showQuestion(questionVariable);
@@ -186,7 +191,13 @@ function newQuizScreen(questionVariable , timerStartPoint , questionAnswer) {
     transparentNextButton();
     rightOrWrong();
     startTimer(timerStartPoint, questionAnswer);
-}
+};
+/**
+ * firstQuizScreen function which triggers onclick on button with class continue , this hides the info box while revealing the quiz box and populates first question of quiz
+ * @param {variable} question1Variable - question variable 
+ * @param {number} timerValue  - number value given to timer as a start point, this number is whats de-incremented 
+ * @param {variable .answer} question1Answer - question variable used in first parameter but focusing on the .answer property
+ */
 
 function firstQuizScreen(question1Variable , timerValue , question1Answer){
     infoBox.classList.remove("activeInfo");
@@ -195,14 +206,17 @@ function firstQuizScreen(question1Variable , timerValue , question1Answer){
     showOptions(question1Variable);
     rightOrWrong();
     startTimer(timerValue, question1Answer);
-}
-
+};
+// function which is called at end of quiz to hide quiz-box and reveal the result box , while passing the number variable which holds the users correct answers for text literal responses"
 function endScreen(correctVariable){
     removeQuizBox();
     showResultBox();
     userFeedbackOnResult(correctVariable);
-}
-//function which displays different template literals based on the users score which is assigned to the variable right (out of 10)
+};
+/**
+ * userFeedbackOnResult function which returns text feedback to user depending on the value of the right parameter which is passed , this number is evaluated in a if statement and returns different template literals with emojies taken from font awesome
+ * @param {number} right -Globally defined variable which increments when a user gets a score correct
+ */
 function userFeedbackOnResult(right) {
     const emojiElement = document.getElementsByClassName("end-emojie")[0];
     const completeTextElement = document.getElementsByClassName("complete-text")[0];
@@ -217,10 +231,7 @@ function userFeedbackOnResult(right) {
         emojiElement.innerHTML = '<i class="fa-regular fa-face-laugh-wink"></i>';
         completeTextElement.textContent = `Well Done! You scored ${right} out of 10, keep working hard!`;
     }
-}
-/**
- * function which removes the rules box and reveals the actual Quiz box , populating the first question
- */
+};
 
 /**
  * onclick function to trigger infobox and setup first page of quiz questions
@@ -231,7 +242,7 @@ continueBtn.onclick = function() {
   };
 
 /**
- * Switch case which is used to populate the next set of questions for the user
+ * Switch case which is used to populate the next set of questions for the user, when the next.Btn is clicked on the quiz box footer
  * @param {number} quizCount - this parameter holds the number of onclick presses of the nextBtn and executes the apprpriate classes.
  */
 nextBtn.onclick = function () {
@@ -307,14 +318,18 @@ function startTimer(time, answer) {
             whenTimerEnds(answer);
         }
     }, 1000);
-}
+};
 /**
- * Sets assigned variable to false, which inturns stops the timer.
+ * Sets assigned variable to false, which inturn stops the timer.
  */
 function stopTimer() {
     isTimerRunning = false; // Set isTimerRunning to false to stop the timer
-}
+};
 
+/**
+ * Function which is called when the timer number value reaches 0 , function handles visual feedback to users in terms of revealing correct answer , without a user needing to click a option
+ * @param {question .answer } text answer to the current quiz question
+ */
 function whenTimerEnds(answer) {
     clearInterval(timer);
     alert("Time is up!");
@@ -325,7 +340,7 @@ function whenTimerEnds(answer) {
     enableNextButton();
     workingNextButton();
 
-}
+};
 /**
  * Displays the given question in the UI.
  * @param {Array} question - The question object to be displayed.
@@ -333,7 +348,7 @@ function whenTimerEnds(answer) {
 function showQuestion(question) {
     let questionText = document.getElementsByClassName('question-text')[0];   //target the div which will contain the question
     questionText.innerHTML = question[0].question;  //Look at question1 variable , select index 0 object and focus on the .question property.
-}
+};
 /**
  * Displays the answer options for the given question.
  * @param {Array} question - The question object containing the options to be displayed.
@@ -359,7 +374,7 @@ function showOptions(question) {
             saveUserInput(question, newOptionElements[i].textContent,);
         });
     }
-}
+};
 /**
  * Saves the user's answer and provides feedback on whether it's correct or incorrect.
  * @param {Array} questionList - The question object containing the answer and options.
@@ -436,7 +451,7 @@ function ClearQuiz() {
 };
 
 /**
- * Function to prevent users from inputting a different answer once the inital answer has been given
+ * Function to allow users to input another answer via button press 
  */
 
 function unfreezeOptions() {

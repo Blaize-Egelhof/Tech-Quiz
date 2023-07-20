@@ -86,6 +86,10 @@ body {
     font-size: 28px;
     text-decoration: underline;
 }
+/*styles for h2 element*/
+h2 {
+    font-size: 28px;
+}
 /* Styles for information box list of rules container  */
 .info-box .infolist {
     padding: 15px 30px;
@@ -456,6 +460,10 @@ footer .hide {
         font-family: 'Roboto Slab', serif;
         border-radius: 18px;
     }
+    /* style change for h2 element */
+    h2 {
+        font-size: 26px;
+    }
 }
 /* For screen sizes up to 510px */
 @media screen and (max-width: 510px) {
@@ -466,6 +474,10 @@ footer .hide {
     /* style change for info-box title */
     .info-box .info-title {
         /* height: 3.75rem; */
+        font-size: 26px;
+    }
+    /*stlye for h2 element */
+    h2{
         font-size: 26px;
     }
      /* style change for quiz-box title */
@@ -493,6 +505,10 @@ footer .hide {
     .quiz-header .timer-sec {
         font-size: 16px;
         /* height: 30px; */
+    }
+    /* style for h2 element */
+    h2 {
+        font-size: 24px;
     }
 }
 /* For screen sizes up to 395px */
@@ -523,6 +539,10 @@ footer .hide {
     .info-box .info-title {
         font-size: 24px;
     }
+    /* style change for h2 element */
+    h2{
+        font-size:24px;
+    }
     /* style change for info-box info container*/
     .info-box .infolist .info {
         font-size: 13px;
@@ -544,5 +564,9 @@ footer .hide {
     .info-box .info-title {
         /* height: 3.75rem; */
         font-size: 22px;
+    }
+    /* style change for h2 element*/
+    h2{
+        font-size:22px;
     }
 }
