@@ -7,11 +7,6 @@ body {
     color: white;
     background: blue;
 }
-/* Styles for user selection for firefox browsers */
-::-moz-selection {
-    color: white;
-    background: blue;
-}
 /* Group of styles for all main html containers*/
 .start-btn,
 .info-box,
@@ -28,7 +23,7 @@ body {
 .result-box.activeResult {
     opacity: 1;
     z-index: 5;
-    pointer-events: auto;
+    pointer-events: auto ; 
     transform: translate(-50%, -50%) scale(1);
     transition: all 0.3s ease;
 }
@@ -62,6 +57,7 @@ body {
 .welcome-title h1 {
     padding-bottom: 20px;
     font-size: 35px;
+    color:whitesmoke;
     white-space: nowrap;
     font-family: 'Roboto Slab', serif;
     text-decoration: underline;
@@ -70,8 +66,8 @@ body {
 .info-box {
     width: 475px;
     opacity: 0;
-    pointer-events: none;
-    transition: all 0, 3s ease;
+    pointer-events: none ; 
+    transition: all 0.3s ease;
     background: white;
     border-radius: 10px;
 }
@@ -131,8 +127,8 @@ h2 {
     background: white;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
-    pointer-events: none;
-    transition: all 0.3 ease;
+    pointer-events: none ;
+    transition: all 0.3s ease;
 }
 /* Styles for main quiz form header container*/
 .quiz-header {
@@ -155,7 +151,6 @@ h2 {
 /* Styles for main quiz form timer container*/
 .quiz-header .timer {
     color: black;
-    background: white;
     border: 1px solid white;
     height: 2.813rem;
     padding: 0 8px;
@@ -185,11 +180,11 @@ h2 {
 }
 /* class to be called in javascript when I need to disable users interactivity*/
 .disabled {
-    pointer-events: none;
+    pointer-events: none ;
 }
 /* class to be called in javascript when I need to disable users interactivity and make HTML element transparent*/
 .hidden{
-    pointer-events: none ; 
+    pointer-events: none ;
     opacity: 0; 
 
 }
@@ -234,7 +229,7 @@ h2 {
 /* styles for option buttons*/
 .section .option-list .option {
     background: rgb(206, 213, 208);
-    border: 1 px solid #84c5fe;
+    border: 1px solid black;
     border-radius: 5px;
     padding: 8px 15px;
     font-size: 17px;
@@ -271,7 +266,7 @@ h2 {
     color: lightblue;
     border-radius: 5px;
     background: black;
-    border: 1px solid black;
+    border: 1px solid;
     line-height: 10px;
     opacity: 0;
     pointer-events: none;
@@ -329,7 +324,7 @@ footer button:hover {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    transform: translate(-50% -50%)scale(0.9);
+    transform: translate(-50% ,-50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
@@ -430,7 +425,7 @@ footer .hide {
         width: 400px;
         opacity: 0;
         pointer-events: none;
-        transition: all 0, 3s ease;
+        transition: all 0.3s ease;
         background: white;
         border-radius: 10px;
         position: fixed;
@@ -454,7 +449,7 @@ footer .hide {
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        transform: translate(-50% -50%)scale(0.9);
+        transform: translate(-50% ,-50%)scale(0.9);
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s ease;
