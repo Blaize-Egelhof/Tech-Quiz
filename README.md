@@ -1,19 +1,8 @@
-https://icons8.com/icons/set/tech - favicon icon 
+# Tech Quiz
 
+Welcome to my first-ever online quiz application built using JavaScript! My Interactive quiz app is designed around the idea of providing a simple yet graphically pleasing Quiz app to my users . As a remote onsite technician , I believe that continuously testing your knowledge will greatly improve your overall regardless of your specialty in the IT world, this quiz offers a fun and engaging way to explore and expand your understanding of IT concepts, so please enjoy! 
 
-# Investments A.I
-
-Welcome to Investments AI, an innovative investment firm that revolutionizes the way you invest. We harness the collective expertise of seasoned investors and highly skilled AI specialists to conduct thorough analysis, meticulous study, and precise predictive calculations. Our investment team and AI specialists collaborate closely to ensure we make well-calculated risk-to-reward investment decisions.
-
-At Investments AI, we cater to both small and large-scale investors who are ready to embrace the power of artificial intelligence alongside traditional investment markets. Statistics demonstrate that investments guided and monitored by our AI bots have a significantly higher chance of thriving compared to the outdated traditional investment methods.
-
-Our investment firm is particularly advantageous for new and intermediate investors who prefer a more balanced risk profile. Unlike other firms that promote high-risk, high-reward strategies, our approach ensures a guaranteed return on your investment within a year. We prioritize safeguarding our clients' investments, significantly reducing the likelihood of loss compared to traditional investment models.
-
-The undeniable success of "Investment bots" in the crypto exchange markets exemplifies their superiority in consistently achieving favorable profit margins compared to individual investors. Therefore, why not capitalize on the best of both worlds?
-
-At Investments AI, we pride ourselves on delivering exceptional service and offering an ironclad guarantee. Trust us to take your investments to new heights with our cutting-edge approach and unwavering commitment to your success.
-
-![Responsice Mockup](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/amiresponsive.PNG)
+![Responsive Mockup](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/amiresponsive.PNG)
 
 ## Features 
 
@@ -21,19 +10,13 @@ In the section below I will highlight each section of my website and explain its
 
 ### Existing Features
 
-- __Navigation Bar__
+- __Landing Page__
 
-- Featured on all 4 pages.
-- This section will allow potential investors to easily navigate from page to page across all devices without having to revert 
-  back to the previous page via the 'back' button.
-- In my navigation bar, I have a menu link, sign-up link, login link, and meet-the-team link.
-- I have chosen to incorporate these links with the following ideas in mind:
-- As a potential investor who may be interested in signing up and finding out more about our services, it is essential to have a 
-  sign-up link to facilitate direct contact between our team and potential clients.
-- For investors who are already our clients, a login page is necessary for them to access their uniquely set up accounts and view 
-  their investments.
-- Finally, regardless of whether you are an existing or potential client, we have a page dedicated to our two main teams who work 
-  with our clients' investments. This page adopts a more welcoming and anti-corporate approach compared to typical investment firms, with the intent of portraying our firm as open, trustworthy, and friendly!
+-Welcome to my landing page, where I have prioritized simplicity and functionality over flashy graphics and animations, this landing page only consists of 3 main elements which are immediately revealed to users upon the site loading.
+-My title text, center aligned and displayed in white, which creates a contrast against the dark grey background, immediately setting your expectations of what is to come!
+-Now, your attention will be drawn to our thoughtfully placed "Start Quiz" button, also in white, inviting you to explore the quiz. This button serves as the sole interactive element on the landing page, ensuring that all users no matter what can fully understand what happens when the button is pressed.
+-My Footer's text, which is also centered and colored in white, which displays important information to new users. Once you're ready to begin the quiz and press the start button, this footer is temporarily made invisible to eliminate any excess screen pollution.
+
 
 ![Nav Bar](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1header!.PNG)
 
@@ -205,3 +188,8 @@ Meet-the-team.html body:
 [Meet-the-team of investors img](https://za.pinterest.com/pin/1009580441445599246/) - Taken from [fortunebuilders.com](https://za.pinterest.com/pin/1009580441445599246/) under the Pinterest username: FortuneBuilders.
 
 [Meet-the-team of AI Specialists img](https://za.pinterest.com/pin/330240585152398223/) - Taken from [stocksy.com](https://za.pinterest.com/pin/1009580441445599246/) under Pinterest username: Stocksy United.
+
+
+
+DONT DELETE 
+https://icons8.com/icons/set/tech - favicon icon 
