@@ -187,10 +187,10 @@ function newQuizScreen(questionVariable , timerStartPoint , questionAnswer) {
     ClearQuiz();
     showQuestion(questionVariable);
     showOptions(questionVariable);
-    unfreezeOptions();
     transparentNextButton();
     rightOrWrong();
     startTimer(timerStartPoint, questionAnswer);
+    unfreezeOptions();
 };
 /**
  * firstQuizScreen function which triggers onclick on button with class continue , this hides the info box while revealing the quiz box and populates first question of quiz
@@ -397,16 +397,14 @@ function saveUserInput(questionList, userAnswer1) {
     if (userAnswer1 === answer) {
         alert("Correct!");
         right++;
-        stopTimer();
-        enableNextButton();
-        workingNextButton();
     } else {
         alert("Wrong!");
         wrong++;
-        stopTimer();
-        enableNextButton();
-        workingNextButton();
     }
+    stopTimer();
+    enableNextButton();
+    workingNextButton();
+    freezeOptions();
 
     document.getElementsByClassName("r-or-w-txt")[0].innerHTML = right;
     document.getElementsByClassName("r-or-w-txt")[1].innerHTML = wrong;
@@ -451,12 +449,12 @@ function ClearQuiz() {
 };
 
 /**
- * Function to allow users to input another answer via button press 
+ * Function to allow users to input another answer via next button press 
  */
 
 function unfreezeOptions() {
     let unfreeze = document.getElementsByClassName("option-list")[0];
-    unfreeze.classList.add("enabled");
+    unfreeze.classList.remove("disabled");
 }
 
 /**
