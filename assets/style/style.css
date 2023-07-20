@@ -203,36 +203,36 @@ h2 {
     pointer-events: auto;
 }
 /* class to be called in javascript to reveal correct answer*/
-section .option-list .option.correct {
+.section .option-list .option.correct {
     color: #155724;
     background: #d4edda;
     border: 1px solid green;
     transition: all 0.3s ease;
 }
 /* class to be called in javascript to reveal incorrect answers*/
-section .option-list .option.incorrect {
+.section .option-list .option.incorrect {
     color: #721c24;
     background: #f8d7da;
     border: 1px solid red;
     transition: all 0.3s ease;
 }
 /* styles for section element */
-section {
+.section {
     padding: 25px 30px 20px 30px;
     background: white;
 }
 /* styles for section element */
-section .question-text {
+.section .question-text {
     font-size: 25px;
     font-family: 'Roboto Slab', serif;
 }
 /* styles for option buttons container */
-section .option-list {
+.section .option-list {
     display: block;
     padding: 20px 0px;
 }
 /* styles for option buttons*/
-section .option-list .option {
+.section .option-list .option {
     background: rgb(206, 213, 208);
     border: 1 px solid #84c5fe;
     border-radius: 5px;
@@ -246,11 +246,11 @@ section .option-list .option {
     justify-content: space-between;
 }
 /* hover selector for option buttons */
-section .option-list .option:hover {
+.section .option-list .option:hover {
     border: 1px solid black;
 }
 /* hover selector for option buttons to stop interactivity */
-section .option-list .option.disabled {
+.section .option-list .option.disabled {
     pointer-events: none;
 }
 /* styles for quiz footer container */
@@ -268,15 +268,16 @@ section .option-list .option.disabled {
     cursor: pointer;
     border: none;
     outline: none;
-    color: white;
+    color: lightblue;
     border-radius: 5px;
     background: black;
-    border: 1px solid blue;
+    border: 1px solid black;
     line-height: 10px;
     opacity: 0;
     pointer-events: none;
     transform: scale(0.95);
     transition: all 0.3s ease;
+    margin: 3px 5px;
 }
 /* styles for quiz footer score tally container */
 .r-or-w{
@@ -489,11 +490,11 @@ footer .hide {
         /* height: 2.813rem; */
     }
      /* style change for quiz-box question */
-    section .question-text {
+    .section .question-text {
         font-size: 22px;
     }
      /* style change for quiz-box option container */
-    section .option-list .option {
+    .section .option-list .option {
         font-size: 15px;
         margin-bottom: 10px;
     }
@@ -532,6 +533,9 @@ footer .hide {
     .quiz-footer {
         padding: 9px 10px;
     }
+    .info-box .infolist {
+        padding: 6px 30px;
+    }
 }
 /* For screen sizes up to 359px */
 @media screen and (max-width: 359px) {
@@ -541,7 +545,7 @@ footer .hide {
     }
     /* style change for h2 element */
     h2{
-        font-size:24px;
+        font-size:21px;
     }
     /* style change for info-box info container*/
     .info-box .infolist .info {
@@ -567,6 +571,6 @@ footer .hide {
     }
     /* style change for h2 element*/
     h2{
-        font-size:22px;
+        font-size:20px;
     }
 }
