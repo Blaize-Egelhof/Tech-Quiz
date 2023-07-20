@@ -2,7 +2,7 @@
 
 Welcome to my first-ever online quiz application built using JavaScript! My Interactive quiz app is designed around the idea of providing a simple yet graphically pleasing Quiz app to my users . As a remote onsite technician , I believe that continuously testing your knowledge will greatly improve your overall regardless of your specialty in the IT world, this quiz offers a fun and engaging way to explore and expand your understanding of IT concepts, so please enjoy! 
 
-![Responsive Mockup](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/amiresponsive.PNG)
+![Responsive Mockup](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/am-i-responsive-pic.PNG)
 
 ## Features 
 
@@ -13,37 +13,39 @@ In the section below I will highlight each section of my website and explain its
 - __Landing Page__
 
 -Welcome to my landing page, where I have prioritized simplicity and functionality over flashy graphics and animations, this landing page only consists of 3 main elements which are immediately revealed to users upon the site loading.
+![Landing Page](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/landing-page.PNG)
+- __Title Text__
 -My title text, center aligned and displayed in white, which creates a contrast against the dark grey background, immediately setting your expectations of what is to come!
+![Title Text](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/landing-page.PNG)
+__Start Quiz Button__
 -Now, your attention will be drawn to our thoughtfully placed "Start Quiz" button, also in white, inviting you to explore the quiz. This button serves as the sole interactive element on the landing page, ensuring that all users no matter what can fully understand what happens when the button is pressed.
+![start button](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/landing-page.PNG)
+__Footer Text__
 -My Footer's text, which is also centered and colored in white, which displays important information to new users. Once you're ready to begin the quiz and press the start button, this footer is temporarily made invisible to eliminate any excess screen pollution.
+![footer text](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/landing-page.PNG)
+
+- __Info Box__
+
+-After a user selects Start Quiz they will be greated by a clean , simplistic box containing a header , list of rules and 2 buttons, again adhering to the theme of simplicity and functionality over animations and graphics. 
+![Info Box](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-why-choose-us-section.PNG)
+- __Info Box Header__
+-When the info box is called users are met with a dark underlined header text which provides substansial contrast to the info-box's white background and provides visual clarity to all users , this heading serves as the main focal point for this layer. 
+![Info Box Header](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-why-choose-us-section.PNG)
+- __Info Box Rules__
+-After a user has glanced at the main focal point (header) users eyes are directed below the header , revealing a set of rules users need to be made aware of upon starting the quiz. This text is colored in black to again add contrast and clarity while present on the info-box.
+![Info Box rules](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-why-choose-us-section.PNG)
+- __Info Box Buttons__
 
 
-![Nav Bar](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1header!.PNG)
 
-- __The landing page Section__
 
-- This landing page includes a very subtle hero image with a white text overlay with 2 anchor links.
-- The anchor links are included to give users the option to sign up or login if they have already decided to do business with my  investment firm after reading the main text included on the landing page.
-- This section provides a clear explanation of who we are as an investment firm.
-- I am aware of the contrast errors highlighted by WAVE on the landing page. I have chosen to include the errors for aesthetic 
-  purposes as the background doesn't reduce the visibility of the text while maintaining a clean and simplistic design.
 
-![Landing Page](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1landingpage.PNG)
 
-- __Why Choose Us Section__
 
-  - This section consists of a static background image with text and 2 anker tags .
-  - This section was designed with the following questions in mind , "Why Choose our investment firm over others?" "What makes  
-    our investment firm unique?"
-  - These questions are quickly answered by the short and simple paragraph explaining what makes us the ideal choice over other 
-    investment firms. 
-  - I purposely included the same links mentioned in the landing page in the rare scenario that a potential client may have 
-    already decided to do business with us after reading the why choose us section of our index page, and would like to sign-up or alternativly login if they are existing clients! 
-  - This section is valuable to investors who seek a clear answer to the above mentioned questions without the need of redundant 
-    and/or unessary information as many investment firms incorporate in the attempts to "Hide any clause's and/or valuable   
-    information which may contridict earlier statments" This plays a big part in my attempt to appear as transparent , honest and trustworthy as possible . 
 
-![Why Choose Us Section](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-why-choose-us-section.PNG)
+
+
+
 
 - __Meet The Head Team Section__
 
