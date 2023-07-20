@@ -88,25 +88,29 @@ let question10 = [
     }
 ];
 
+// Variables to track user's score and timer
+
+var right = 0;
+var wrong = 0;
+let quizCount = 0;
+let timer; // Declare a global variable to store the timer
+let isTimerRunning = false; // Track the status of the timer
+
+// DOM elements
+
 let startBtn = document.querySelector('.start-btn-container > button');
 let infoBox = document.getElementsByClassName('info-box')[0];
 let quitBtn = document.getElementsByClassName('quit')[0];
 let quitBtn1 = document.getElementsByClassName('quit')[1];
 let continueBtn = document.getElementsByClassName('continue')[0];
 let quizBox = document.getElementsByClassName('quiz-box')[0];
-var right = 0;
-var wrong = 0;
 let nextBtn = document.getElementsByClassName('next-btn')[0];
-let quizCount = 0;
 let restartBtn = document.getElementsByClassName('restart')[0];
-let timer; // Declare a global variable to store the timer
-let isTimerRunning = false; // Track the status of the timer
 
 //function to respond to when start quiz button is clicked
 //On click activate the class to reveal rules of quiz and disable class for front page
 
 startBtn.onclick = function showQuizRules() {
-    console.log('BUTTON IS CLICKED');
     infoBox.classList.add("activeInfo");  //show info box
     hideMainMenu();
     hideFooter();
@@ -115,7 +119,6 @@ startBtn.onclick = function showQuizRules() {
 //On click  remove the activate class to hide info box.
 
 quitBtn.onclick = function hideQuizRules() {
-    console.log('BUTTON IS CLICKED');
     infoBox.classList.remove("activeInfo");
     revealMainMenu();
 };
@@ -174,6 +177,31 @@ function revealMainMenu(){
 function showResultBox() {
     document.getElementsByClassName("result-box")[0].classList.add("activeResult");
 }
+
+function newQuizScreen(questionVariable , timerStartPoint , questionAnswer) {
+    ClearQuiz();
+    showQuestion(questionVariable);
+    showOptions(questionVariable);
+    unfreezeOptions();
+    transparentNextButton();
+    rightOrWrong();
+    startTimer(timerStartPoint, questionAnswer);
+}
+
+function firstQuizScreen(question1Variable , timerValue , question1Answer){
+    infoBox.classList.remove("activeInfo");
+    quizBox.classList.add("activeQuiz");
+    showQuestion(question1Variable);
+    showOptions(question1Variable);
+    rightOrWrong();
+    startTimer(timerValue, question1Answer);
+}
+
+function endScreen(correctVariable){
+    removeQuizBox();
+    showResultBox();
+    userFeedbackOnResult(correctVariable);
+}
 //function which displays different template literals based on the users score which is assigned to the variable right (out of 10)
 function userFeedbackOnResult(right) {
     const emojiElement = document.getElementsByClassName("end-emojie")[0];
@@ -194,15 +222,13 @@ function userFeedbackOnResult(right) {
  * function which removes the rules box and reveals the actual Quiz box , populating the first question
  */
 
-continueBtn.onclick = function openQuizBox() {
-    console.log('BUTTON IS CLICKED');
-    infoBox.classList.remove("activeInfo");
-    quizBox.classList.add("activeQuiz");
-    showQuestion(question1);
-    showOptions(question1);
-    rightOrWrong();
-    startTimer(20, question1[0].answer);
-};
+/**
+ * onclick function to trigger infobox and setup first page of quiz questions
+ */
+
+continueBtn.onclick = function() {
+    firstQuizScreen(question1, 20, question1[0].answer);
+  };
 
 /**
  * Switch case which is used to populate the next set of questions for the user
@@ -213,90 +239,34 @@ nextBtn.onclick = function () {
 
     switch (quizCount) {
         case 1:
-            ClearQuiz();
-            showQuestion(question2);
-            showOptions(question2);
-            unfreezeOptions();
-            transparentNextButton();
-            rightOrWrong();
-            startTimer(20, question2[0].answer);
+            newQuizScreen(question2 , 20 , question2[0].answer) ;
             break;
         case 2:
-            ClearQuiz();
-            showQuestion(question3);
-            showOptions(question3);
-            unfreezeOptions();
-            transparentNextButton();
-            rightOrWrong();
-            startTimer(20, question3[0].answer);
+            newQuizScreen(question3 , 20 , question3[0].answer) ;
             break;
         case 3:
-            ClearQuiz();
-            showQuestion(question4);
-            showOptions(question4);
-            unfreezeOptions();
-            transparentNextButton();
-            rightOrWrong();
-            startTimer(20, question4[0].answer);
+            newQuizScreen(question4 , 20 , question4[0].answer) ;
             break;
         case 4:
-            ClearQuiz();
-            showQuestion(question5);
-            showOptions(question5);
-            unfreezeOptions();
-            transparentNextButton();
-            rightOrWrong();
-            startTimer(20, question5[0].answer);
+            newQuizScreen(question5 , 20 , question5[0].answer) ;
             break;
         case 5:
-            ClearQuiz();
-            showQuestion(question6);
-            showOptions(question6);
-            unfreezeOptions();
-            transparentNextButton();
-            rightOrWrong();
-            startTimer(20, question6[0].answer);
+            newQuizScreen(question6 , 20 , question6[0].answer) ;
             break;
         case 6:
-            ClearQuiz();
-            showQuestion(question7);
-            showOptions(question7);
-            unfreezeOptions();
-            transparentNextButton();
-            rightOrWrong();
-            startTimer(20, question7[0].answer);
+            newQuizScreen(question7 , 20 , question7[0].answer) ;
             break;
         case 7:
-            ClearQuiz();
-            showQuestion(question8);
-            showOptions(question8);
-            unfreezeOptions();
-            transparentNextButton();
-            rightOrWrong();
-            startTimer(20, question8[0].answer);
+            newQuizScreen(question8 , 20 , question8[0].answer) ;
             break;
         case 8:
-            ClearQuiz();
-            showQuestion(question9);
-            showOptions(question9);
-            unfreezeOptions();
-            transparentNextButton();
-            rightOrWrong();
-            startTimer(20, question9[0].answer);
+            newQuizScreen(question9 , 20 , question9[0].answer) ;
             break;
         case 9:
-            ClearQuiz();
-            showQuestion(question10);
-            showOptions(question10);
-            unfreezeOptions();
-            transparentNextButton();
-            rightOrWrong();
-            startTimer(20, question10[0].answer);
+            newQuizScreen(question10 , 20 , question10[0].answer) ;
             break;
         case 10:
-            removeQuizBox();
-            showResultBox();
-            userFeedbackOnResult(right);
+            endScreen(right);
     };
 };
 /**
@@ -334,14 +304,7 @@ function startTimer(time, answer) {
         }
 
         if (timeLeft === 0) {
-            clearInterval(timer);
-            alert("Time is up!");
-            wrong++;
-            rightOrWrong();
-            autoShowAnswer(answer);
-            freezeOptions();
-            enableNextButton();
-            workingNextButton();
+            whenTimerEnds(answer);
         }
     }, 1000);
 }
@@ -350,6 +313,18 @@ function startTimer(time, answer) {
  */
 function stopTimer() {
     isTimerRunning = false; // Set isTimerRunning to false to stop the timer
+}
+
+function whenTimerEnds(answer) {
+    clearInterval(timer);
+    alert("Time is up!");
+    wrong++;
+    rightOrWrong();
+    autoShowAnswer(answer);
+    freezeOptions();
+    enableNextButton();
+    workingNextButton();
+
 }
 /**
  * Displays the given question in the UI.
@@ -366,7 +341,6 @@ function showQuestion(question) {
  */
 function showOptions(question) {
     const optionContainer = document.getElementsByClassName('option-list')[0];
-    const optionElements = document.getElementsByClassName('option');
     const options = question[0].options;
 
     // Clone the option container to remove all event listeners

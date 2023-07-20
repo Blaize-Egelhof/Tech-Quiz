@@ -399,6 +399,7 @@ footer {
         top: 93%;
         overflow: hidden;
         position: absolute;
+        bottom: 0%;
 }
 /* styles for footer to hide it */
 footer .hide {
