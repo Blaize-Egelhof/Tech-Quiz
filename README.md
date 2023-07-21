@@ -1,6 +1,6 @@
 # Tech Quiz
 
-Welcome to my first-ever online quiz application built using JavaScript! My Interactive quiz app is designed around the idea of providing a simple yet graphically pleasing Quiz app to my users . As a remote onsite technician , I believe that continuously testing your knowledge will greatly improve your overall regardless of your specialty in the IT world, this quiz offers a fun and engaging way to explore and expand your understanding of IT concepts, so please enjoy! 
+Welcome to my first-ever online quiz application built using JavaScript! My Interactive quiz app is designed around the idea of providing a simple yet graphically pleasing Quiz app to my users . As a remote onsite technician , I believe that continuously testing your IT knowledge will greatly improve your overall regardless of your specialty in the IT world, this quiz offers a fun and engaging way to explore and expand your understanding of IT concepts, so please enjoy! 
 
 ![Responsive Mockup](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/am-i-responsive-pic.PNG)
 
@@ -35,7 +35,10 @@ __Footer Text__
 -After a user has glanced at the main focal point (header) users eyes are directed below the header , revealing a set of rules users need to be made aware of upon starting the quiz. This text is colored in black to again add contrast and clarity while present on the info-box.
 ![Info Box rules](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-why-choose-us-section.PNG)
 - __Info Box Buttons__
-
+-After a user has glanced over the rules , naturally they will glance over the infobox's "footer" revealing 2 buttons , these buttons have been given a black border and grey background in order to provide adiquite contrast against the info box's color pallete, addionally each button has been given innertext in order to 
+-The Exit Quiz button on click simply reveals the landing page while hiding the info box. 
+-The Start Quiz button on click hides the info box and reveals the actual Quiz box, populating the first set of fields for question1. 
+![Info Box Button](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-why-choose-us-section.PNG)
 
 
 
