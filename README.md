@@ -8,37 +8,35 @@ Welcome to my first-ever online quiz application built using JavaScript! My Inte
 
 In the section below I will highlight each section of my website and explain its purpose , as well as why I have decided to implement each section and feature ! 
 
-### Existing Features
-
-- __Landing Page__
+### Landing Page
 
 -Welcome to my landing page, where I have prioritized simplicity and functionality over flashy graphics and animations, this landing page only consists of 3 main elements which are immediately revealed to users upon the site loading.
 ![Landing Page](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/landing-page.PNG)
 - __Title Text__
 -My title text, center aligned and displayed in white, which creates a contrast against the dark grey background, immediately setting your expectations of what is to come!
-![Title Text](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/landing-page.PNG)
+![Title Text](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/title-text.PNG)
 __Start Quiz Button__
 -Now, your attention will be drawn to our thoughtfully placed "Start Quiz" button, also in white, inviting you to explore the quiz. This button serves as the sole interactive element on the landing page, ensuring that all users no matter what can fully understand what happens when the button is pressed.
-![start button](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/landing-page.PNG)
+![start button](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/start-quiz-button.PNG)
 __Footer Text__
 -My Footer's text, which is also centered and colored in white, which displays important information to new users. Once you're ready to begin the quiz and press the start button, this footer is temporarily made invisible to eliminate any excess screen pollution.
-![footer text](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/landing-page.PNG)
+![footer text](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/footer.PNG)
 
-- __Info Box__
+### Information Box 
 
 -After a user selects Start Quiz they will be greated by a clean , simplistic box containing a header , list of rules and 2 buttons, again adhering to the theme of simplicity and functionality over animations and graphics. 
-![Info Box](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-why-choose-us-section.PNG)
+![Info Box](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infobox.PNG)
 - __Info Box Header__
 -When the info box is called users are met with a dark underlined header text which provides substansial contrast to the info-box's white background and provides visual clarity to all users , this heading serves as the main focal point for this layer. 
-![Info Box Header](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-why-choose-us-section.PNG)
+![Info Box Header](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxheader.PNG)
 - __Info Box Rules__
 -After a user has glanced at the main focal point (header) users eyes are directed below the header , revealing a set of rules users need to be made aware of upon starting the quiz. This text is colored in black to again add contrast and clarity while present on the info-box.
-![Info Box rules](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-why-choose-us-section.PNG)
+![Info Box rules](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxtext.PNG)
 - __Info Box Buttons__
 -After a user has glanced over the rules , naturally they will glance over the infobox's "footer" revealing 2 buttons , these buttons have been given a black border and grey background in order to provide adiquite contrast against the info box's color pallete, addionally each button has been given innertext in order to 
 -The Exit Quiz button on click simply reveals the landing page while hiding the info box. 
 -The Start Quiz button on click hides the info box and reveals the actual Quiz box, populating the first set of fields for question1. 
-![Info Box Button](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-why-choose-us-section.PNG)
+![Info Box Button](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
 
 
 
