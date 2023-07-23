@@ -81,6 +81,10 @@ Below the result text box are 2 large buttons which are colored grey with black 
 Both buttons fundamentally do the same thing, which refreshes the browser allowing users to reply the quiz. 
 ![Quiz Result Box Buttons](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/resultboxbuttons.PNG)
 
+### Additonal
+
+-The choice of a simple and bland color theme in the code serves a specific purpose: readability and clarity. By using muted colors and avoiding vibrant or distracting elements, my Quiz dampens any form of visual noise that might otherwise hinder the user's focus during the Quiz.
+
 ### Features Left to Implement
 
 -A basic form that users can fill in to create their own set of Quiz Questions. 
