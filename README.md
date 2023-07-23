@@ -83,59 +83,35 @@ Both buttons fundamentally do the same thing, which refreshes the browser allowi
 
 ### Features Left to Implement
 
--A basic users can fill in to create their own set of Quiz Questions. 
+-A basic form that users can fill in to create their own set of Quiz Questions. 
+
 -A basic form for users to give feedback to me as the developer to improve my web application.
 
 ## Testing 
 **TEST** | **ACTION** | **EXPECTATION** | **RESULT** 
 ----------|----------|----------|----------
 index.html	| Size to 320px using Chrome Dev Tools	| Elements look good @ 320px | Works as expected
-index.html	| Size to 1920px using Chrome Dev Tools | Elements look good 1920px | Works as expected
-index.html	| Test Using WAVE | Pass all checks with no errors| 7 Contrast errors found , chose to keep the errors for aestheic purposes and as the text contrast errors do not reduce visability
-index.html	| Test Using Lighhouse | Pass all checkboxes with above 80% | performance @77% the rest works as expected , find results below table
+index.html	| Size to 1920px using Chrome Dev Tools | Elements look good @ 1920px | Works as expected
+index.html	| Test Using WAVE | Pass all checks with 0 error or contrast errors | Works as expected
+index.html	| Test Using Lighhouse | Pass all checkboxes with above 90% | works as expected , find results below table
 index.html	| Nav buttons |That each nav element takes me to the correct page site page | Works as expected
-sign-up-form.html | Size to 320px using Chrome Dev Tools	| Elements look good @ 320px | Works as expected
-sign-up-form.html | Size to 1920px using Chrome Dev Tools | Elements look good 1920px | Works as expected
-sign-up-form.html | Click send button without data in form fields | Cannot submit form | Works as expected
-sign-up-form.html | Nav buttons |That each nav element takes me to the correct page site page | Works as expected
-sign-up-form.html | Click send button with all fields correctly filled in | Routes user to codeinstitute dump page | Works as expected
-sign-up-form.html| Test Using WAVE | Pass all checks with no errors| works as expected
-sign-up-form.html| Test Using Lighhouse | Pass all checkboxes with above 80% | works as expected , find results below table
-login-form.html| Size to 320px using Chrome Dev Tools	| Elements look good @ 320px | Works as expected
-login-form.html| Size to 1920px using Chrome Dev Tools | Elements look good 1920px | Works as expected
-login-form.html| Test Using WAVE | Pass all checks with no errors| works as expected
-login-form.html| Test Using Lighhouse | Pass all checkboxes with above 80% | Works as expected , find results below table
-login-form.html| Nav buttons |That each nav element takes me to the correct page site page | Works as expected
-login-form.html| Click send button with all fields correctly filled in | Routes user to codeinstitute dump page | Works as expected
-meet-the-team.html| Size to 320px using Chrome Dev Tools	| Elements look good @ 320px | Works as expected
-meet-the-team.html| Size to 1920px using Chrome Dev Tools | Elements look good 1920px | Works as expected
-meet-the-team.html| Test Using WAVE | Pass all checks with no errors| Found 4 contrast errors , which I have chosen to ignore for aestheic purposes as well as the fact that it doesnt reduce user readability
-meet-the-team.html| Test Using Lighhouse | Pass all checkboxes with above 80% | Works as expected , find results below table
-meet-the-team.html| Nav buttons |That each nav element takes me to the correct page site page | Works as expected
-meet-the-team.htmll| Click send button with all fields correctly filled in | Routes user to codeinstitute dump page | Works as expected
 
 -Lighthouse test results 
-
-[index.html](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/lighthouseindex.PNG) [sign-up.html](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/lighthousesignin.PNG) [login-form.html](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/lighthouselogin.PNG) [meet-the-team.html](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/lighthousemeettheteam.PNG)
+[index.html](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/lighthouseindex.PNG) 
 
 -I have also tested my website and have confirmed that it works on both Chrome , Safari and FireFox browsers.
 
 ### Validator Testing 
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator] , upon scanning each .html file present. 
+  - No errors were returned when passing through the official [W3C validator] , upon scanning the index.html file present. 
 
   [Index](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/indexPage.PNG)
-  [signup](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/signupform.PNG)
-  [login](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/loginform.PNG)
-  [meet-the-team](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/meettheteam.PNG)
 
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator] , upon scanning each .css file present.
 
   [style](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/cssstyle.PNG)
-  [meettheteam](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/cssmeettheteam.PNG)
-  [loginform](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/csslogin.PNG)
 
 ### Unfixed Bugs
 
@@ -155,44 +131,28 @@ How I deployed this site using Github Pages
   - From the Source section dropdown menu, I selected the Master Branch.
   - Once the master branch was selected, my page was automatically refreshed, and a detailed ribbon display indicated the successful deployment.
 
-The live link can be found here - https://blaize-egelhof.github.io/Project_1/
+How You can clone this repository 
+ - Go to your repository's Github page and find the "Clone" button.
+ - Copy the URL provided in the dropdown.
+ - Open your terminal or command prompt on your local machine.
+ - Navigate to the directory where you want to store the cloned repo using the 'cd' command.
+ - Type 'git clone [paste the URL]' and press Enter. This will download the repository to your local machine.
+ - Once the cloning is complete, navigate into the cloned directory using 'cd [repository folder name]'.
+ - Now, you can make changes to the project, add new features, or use it as a starting point for your own development.
+ - To keep your repo up to date with the original, use 'git pull' whenever you see updates on the original repository.
+
+The live link can be found here - https://blaize-egelhof.github.io/Tech-Quiz/
 
 ## Credits 
 
 ### Content 
 
-- The text for my entire website was thumb sucked and put through [Grammerley](https://www.grammarly.com/grammar-check) in order to upscale my vocabulary and correct any spelling/or grammatical errors.
-- Instructions on how to design an almost fully responsive form was inspired by the following website [webdesign.tutsplus.com](https://webdesign.tutsplus.com/tutorials/building-responsive-forms-with-flexbox--cms-26767)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
+- The icons in the result box were taken from [Font Awesome](https://fontawesome.com/)
+- The favicon logo was taken from [icons8](https://icons8.com/icons/set/tech)
+- Inspiration for the quiz design was taken from this walkthrough [CodeNow] (https://www.youtube.com/watch?v=3fbU4z7fPe4)
+- Font types was taken from Google Fonts [GoogleFonts](https://fonts.google.com/)
 ### Media
 
 Globally applicable images : 
 
-[Header background](https://za.pinterest.com/pin/748653138049829887/) - Taken from [pngtree.com](https://pngtree.com/). With a huge thanks to the user 588ku who published this image from pngtree.com.
-
-[Footer background](https://za.pinterest.com/pin/748653138049829887/) - Taken from [pngtree.com](https://pngtree.com/). With a huge thanks to the user 588ku who published this image from pngtree.com.
-
-Index.html body:
-[Landing page background img](https://slidescorner.com/backgrounds/background-for-tech-free-for-ppt-google-slides/) - Taken from [slidescorner.com](https://slidescorner.com/). Completely free to use.
-
-[Why choose us background section img](https://za.pinterest.com/pin/270356783867104506/) - Taken from [istockphoto.com](https://www.istockphoto.com/vector/business-candle-stick-graph-chart-of-stock-market-investment-trading-financial-chart-gm921380008-253052413) with credit to Istock publisher Yozayo.
-
-Meet-our-head-team section member img URLs:
-[Profile 1](https://pixabay.com/photos/business-businessman-chair-computer-1839191/) - Credit to Pexels.
-[Profile 2](https://za.pinterest.com/pin/193443746482722989/) - Published by @emilywongphoto. Full credit goes to @emilywongphoto.
-[Profile 3](https://in.pinterest.com/pin/625437467023443753/) - Published under photodune.net by vadymvdrobot. Full credit to vadymvdrobot.
-
-[Background img for Sign-up-form.html form and Login-form.html form](https://www.123rf.com/photo_19072901_abstract-futuristic-fade-computer-technology-business-background.html) - Published by vska.
-
-Meet-the-team.html body:
-[Background images](https://slidescorner.com/backgrounds/background-for-tech-free-for-ppt-google-slides/) - Taken from [slidescorner.com](https://slidescorner.com/). Completely free to use. The section below uses this exact image but rotated 180 degrees.
-
-[Meet-the-team of investors img](https://za.pinterest.com/pin/1009580441445599246/) - Taken from [fortunebuilders.com](https://za.pinterest.com/pin/1009580441445599246/) under the Pinterest username: FortuneBuilders.
-
-[Meet-the-team of AI Specialists img](https://za.pinterest.com/pin/330240585152398223/) - Taken from [stocksy.com](https://za.pinterest.com/pin/1009580441445599246/) under Pinterest username: Stocksy United.
-
-
-
-DONT DELETE 
-https://icons8.com/icons/set/tech - favicon icon 
+None
