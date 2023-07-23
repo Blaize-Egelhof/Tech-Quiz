@@ -278,6 +278,7 @@ nextBtn.onclick = function () {
             break;
         case 10:
             endScreen(right);
+            startTimer(10000, question10[0].answer);
     }
 };
 /**

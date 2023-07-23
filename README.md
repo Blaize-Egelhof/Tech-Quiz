@@ -10,21 +10,22 @@ In the section below I will highlight each section of my website and explain its
 
 ### Landing Page
 
--Welcome to my landing page, where I have prioritized simplicity and functionality over flashy graphics and animations, this landing page only consists of 3 main elements which are immediately revealed to users upon the site loading.
+-Welcome to my landing page, where simplicity and functionality reign supreme, foregoing flashy graphics and animations. The site boasts just three main elements, promptly revealed upon loading for an intuitive user experience. 
+
 ![Landing Page](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/landing-page.PNG)
 - __Title Text__
--My title text, center aligned and displayed in white, which creates a contrast against the dark grey background, immediately setting your expectations of what is to come!
+-My title text, center aligned and displayed in white, which creates a contrast against the dark grey background, I have chosen to underline the entire title text  to create deeper contrast making it almost impossible to miss ! This title states very simply of what is to come !
 ![Title Text](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/title-text.PNG)
-__Start Quiz Button__
--Now, your attention will be drawn to our thoughtfully placed "Start Quiz" button, also in white, inviting you to explore the quiz. This button serves as the sole interactive element on the landing page, ensuring that all users no matter what can fully understand what happens when the button is pressed.
+- __Start Quiz Button__
+-Now, your attention will be drawn to our thoughtfully placed "Start Quiz" button, also in white, inviting you to explore the quiz. This button serves as the sole interactive element on the landing page,this button is colored white with a black text color in order to stand out from the grey background, ensuring that all users no matter what can fully understand what happens when the button is pressed.
 ![start button](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/start-quiz-button.PNG)
-__Footer Text__
--My Footer's text, which is also centered and colored in white, which displays important information to new users. Once you're ready to begin the quiz and press the start button, this footer is temporarily made invisible to eliminate any excess screen pollution.
+-__Footer Text__
+-My Footer's text, which is also centered and colored in white again to provide contrast to its respective grey background, this text displays important information to new users. Once you're ready to begin the quiz and press the start button, this footer is temporarily made invisible to eliminate any excess screen pollution.
 ![footer text](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/footer.PNG)
 
 ### Information Box 
 
--After a user selects Start Quiz they will be greated by a clean , simplistic box containing a header , list of rules and 2 buttons, again adhering to the theme of simplicity and functionality over animations and graphics. 
+-Welcome to the Info Box!,After a user selects Start Quiz they will be greated by a clean , simplistic box containing a header , list of rules and 2 buttons, again adhering to the theme of simplicity and functionality over animations and graphics, this box has been carefully colored and placed so that the users cant miss it once the start-quiz button on the landing page has been pressed! 
 ![Info Box](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infobox.PNG)
 - __Info Box Header__
 -When the info box is called users are met with a dark underlined header text which provides substansial contrast to the info-box's white background and provides visual clarity to all users , this heading serves as the main focal point for this layer. 
@@ -33,58 +34,57 @@ __Footer Text__
 -After a user has glanced at the main focal point (header) users eyes are directed below the header , revealing a set of rules users need to be made aware of upon starting the quiz. This text is colored in black to again add contrast and clarity while present on the info-box.
 ![Info Box rules](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxtext.PNG)
 - __Info Box Buttons__
--After a user has glanced over the rules , naturally they will glance over the infobox's "footer" revealing 2 buttons , these buttons have been given a black border and grey background in order to provide adiquite contrast against the info box's color pallete, addionally each button has been given innertext in order to 
--The Exit Quiz button on click simply reveals the landing page while hiding the info box. 
--The Start Quiz button on click hides the info box and reveals the actual Quiz box, populating the first set of fields for question1. 
+-After a user has glanced over the rules, naturally, they will glance over the infobox's "footer," revealing 2 buttons. These buttons have been given a black border and grey background to provide adequate contrast against the info box's color palette. Additionally, each button has been given inner text.
+-The Exit Quiz button, on click, simply reveals the landing page while hiding the info box.
+-The Start Quiz button, on click, hides the info box and reveals the actual Quiz box, populating the first set of fields for question 1.
 ![Info Box Button](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
 
+### Quiz Box
 
+Welcome to the quiz screen ! , a simple yet functionable quiz interface, which provides a clean UI to accomodate all users . This quiz screen is made up of 6 key elements which are re-used for every new quiz question , keeping the transition from 1 question to another easy to follow , this entire container uses a white background with black text in order to provide contrast to the background grey color all to accomadate my theme of simplicity !
+![Quiz Screen](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
+- __Quiz Box Titel__
+Glancing to the very top of my Quiz box I have included a black underlined heading , this heading doesnt specifically serve a purpose to the end user , however it reminds the user as to what the quiz topics will be about IE Tech related and provides a way for me as the developer to mark this UI as my own. 
+![Quiz Screen Titel](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
+- __Quiz Box Timer__
+Located on the very righ of the Titel text there is static-black text with a grey container which displays the time remaining for the current quiz , this timer serves as a deadline for each question to be answered and will reveal the answers automatically to the user when the timer reaches 0 , this small addition to my quiz creates a sense of urgency when it comes to answering questions which is the whole reason for my quiz , which is to answer a set range of questions within a given time parameter in order to test how well you know your work! 
+![Quiz Screen Timer](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
+- __Quiz Box Question__
+Written in the biggest font-size on in the container , a black text is given to the user which asks a specific given question, this text has been carefully placed in centere of the Quiz-Box along with the given options to the question, when the user hits the next button this objects .innertext is updated to the next question
+![Quiz Screen Main Question](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
+- __Quiz Box Option List__
+Directly below the question , users will find 4 buttons carefully stacked horizontally ontop of eachother , each button has a grey background with black innertext by default to make them easy for users to read off of. Once a user has selected a given option button all buttons inherit specific properties to display visually to users as to which option box was the correct option and which are not, in my below images these options have already inherited said properties to display visually to users which options are right and which arnt. 
+![Quiz Screen Option List](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
+- __Quiz Box User Score Tally__
+In the bottom left corner of the Quiz Box are 2 number values , these number values are colored green for each given answer that is correct and red for each answer given that is wrong , addionally if a user has not given an answer by the time the timer has reached 0 ,the red (incorrect) text is incremented by 1. All inputs given by the user per quiz can only increment the green(correct) text or red (incorrect) text by 1. These text values serve as visual feedback for users so that they may keep track of how many answers they have gotten right or wrong as they work through the quiz.
+![Quiz screen tally](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
+- __Quiz Box Next Button__
+In the bottom right corner of my Quiz box is a button which is colored black with white innertext , this button is the only element in my quiz application to take on a different background color , I have chosen to do this as the next button is the most important button in my quiz which allows my Javascript to work correctly, the color choice was chosen so that once the button appears for users , its very difficult for said users to miss it , without these colors users may ignore the pop-up and as a result wont be able to proceed to the next question.
+Initially this next button is hidden to all users , I have chosen this approach to ensure that only once the timer has run out OR if a user has inputted an answer to a question will this button reveal itself to users, once the button is clicked again however , the button automatically hides itself to prepair for the next question, with this defensive design in place I can manipulate how users answer questions.
+![Quiz Screen Next Button](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
 
+### Quiz Result Box
 
-
-
-
-
-
-
-
-- __Meet The Head Team Section__
-
-- This section showcases the names and faces of our VIP members who represent Investments AI to all potential and current clients.
-- In this section, there are 3 different profiles featuring images, names, and their respective titles.
-- This again aligns with the idea I am trying to communicate: honesty, transparency, and trustworthiness to all clients. Seeing   the main faces of the people who manage your money as an investor gives you a greater sense of relief, as there is a person to hold accountable if something goes wrong. It also emphasizes that we, as an investment firm, have nothing to hide from our investors, indirectly building trust with our clientele.
-- I have decided to keep the page as simple as possible and get straight to the point in order to accommodate potential new investors who may be skeptical about entrusting their money to our firm.
-
-![Meet The Head Team Section](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/meet-the-head-team-img.PNG)
-
-- __The Footer__ 
-
-- A footer section that contains the phone number and email address to directly get in contact with us.
-- This footer section is valuable to users who have more questions that need to be answered before they even consider signing up 
-  with us. This way, they do not have to complete the sign-up form in order to get in contact. It provides them with options for contacting us!
-
-![Footer](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1footer.PNG)
-
-- __Sign Up Form__
-
-  - This form is dedicated to present a sign up form which contains a simple form that is intended for first time users signing  
-    up . 
-  - This section is valuable to first time potential clients who want to sign up and further enquire about plans etc. 
-
-![Sign Up Form](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-sign-up-form.PNG)
-
-- __Login Form__
-
-  - This section is dedicated to present a login form to any existing cliental who wish to login to their private accounts.
-
-![Login Form](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/project1-loginform.PNG)
+-Welcome to my Result Box , a UI which is only revealed to users once they have answered all questions given in the quiz, this container is made up of 3 main sections each section horizontally stacked ontop of eachother , the emonjie,text and button sections.
+-This result box has a white background with all innertext colored black in order to contrast with the grey background.
+-In addion this result box will provide users with different text and emojies depending on how well they did in the quiz , providing direct feedback to users who complete the quiz.
+![Quiz Result Box](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
+- __Result Box Emojie__
+This small section contains and displays 1 of 3 different emojies depending on how well the user did on the quiz, this provides addional visual feedback to users after they have completed the quiz , the below emojie in the attached image specifically is for whena user scored 3 or less questions correct.
+![Quiz Result Box Emojie](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
+- __Result Box Text__
+Below the emojie section is a text feedback section which is given to users , again depending on how well users do in the quiz the text box will display 1 of 3 different template literals, with the inclusion of a basic emojie these 2 sections together provide users with enough feedback to fully understand how well they did on the quiz given.
+Both sections occupy a large majority of centered space within the Result box in order draw users to the inner contents of the result box , to again make it easy for users to keep notice.
+![Quiz Result Text](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
+- __Result Box Buttons__
+Below the result text box are 2 large buttons which are colored grey with black text, I have chosen a grey background over a white background for these buttons as the grey sharply contrasts against the result box's white background. 
+Both buttons fundamentally do the same thing, which refreshes the browser allowing users to reply the quiz. 
+![Quiz Result Box Buttons](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/infoboxbuttons.PNG)
 
 ### Features Left to Implement
 
-- A seperate dedicated page which can pull client data from a server side and display it for exsting clients who Login.
-- I am unable to implement such a page due to time contraints and lack of knowledge about back-end data management as well as 
-  JavaScript
-- A static page which lets users know that they have succesfully submitted the Sign-Up form to avoid users filling in forms       multiple times , I have not implemented this design due to time constraints.
+-A basic users can fill in to create their own set of Quiz Questions. 
+-A basic form for users to give feedback to me as the developer to improve my web application.
 
 ## Testing 
 **TEST** | **ACTION** | **EXPECTATION** | **RESULT** 
