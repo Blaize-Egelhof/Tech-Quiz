@@ -111,7 +111,12 @@ index.html	| Nav buttons |That each nav element takes me to the correct page sit
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator] , upon scanning each .css file present.
 
-  [style](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/cssstyle.PNG)
+  [Style](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/cssstyle.PNG)
+
+- Javascript 
+  - No errors were found when passing through the official [(Jigsaw) validator] , upon scanning each .css file present.
+
+  -[Javascript](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/cssstyle.PNG)
 
 ### Unfixed Bugs
 
@@ -154,5 +159,4 @@ The live link can be found here - https://blaize-egelhof.github.io/Tech-Quiz/
 ### Media
 
 Globally applicable images : 
-
-None
+-None Present
