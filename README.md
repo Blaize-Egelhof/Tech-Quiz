@@ -121,9 +121,9 @@ index.html	| Nav buttons |That each nav element takes me to the correct page sit
   [Style](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/cssstyle.PNG)
 
 - Javascript 
-  - No errors were found when passing through the official [(Jigsaw) validator] , upon scanning each .css file present.
+  - No errors were found when passing through the official [(JSHint) validator] , upon scanning each .css file present.
 
-  -[Javascript](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/cssstyle.PNG)
+  -[Javascript](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/jsvalidator.PNG)
 
 ### Unfixed Bugs
 
