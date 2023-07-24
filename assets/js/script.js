@@ -3,7 +3,7 @@
  */
 document.addEventListener("DOMContentLoaded", function () {
     rightOrWrong();
-    disableEnterKey(13);
+    document.addEventListener('keydown', disableEnterKey);
 });
 
 //Variables used to sort all related question data
@@ -329,8 +329,8 @@ function stopTimer() {
     isTimerRunning = false; // Set isTimerRunning to false to stop the timer
 }
 /**
- * @param {keyvalue} - records enter keystroke . 
- * Function disables enter key when the user presses enter once, function triggered onDomLoaded.
+ * @param {event} - records any keystroke. 
+ * Function disables enter key when the user clicks any key, function triggered onDomLoaded.
  */
 
 function disableEnterKey(event) {
