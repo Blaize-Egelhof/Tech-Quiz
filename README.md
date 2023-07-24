@@ -104,8 +104,7 @@ index.html	| Nav buttons |That each nav element takes me to the correct page sit
 [index.html](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/lighthouseindex.PNG) 
 
 -Wave test results 
-[wave](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/waveresults.PNG) 
-
+[wave](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/waveresults.PNG)
 -I have also tested my website and have confirmed that it works on both Chrome , Safari and FireFox browsers.
 
 ### Validator Testing 
