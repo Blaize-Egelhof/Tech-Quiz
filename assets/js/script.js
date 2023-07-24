@@ -3,6 +3,7 @@
  */
 document.addEventListener("DOMContentLoaded", function () {
     rightOrWrong();
+    disableEnterKey(13);
 });
 
 //Variables used to sort all related question data
@@ -327,7 +328,16 @@ function startTimer(time, answer) {
 function stopTimer() {
     isTimerRunning = false; // Set isTimerRunning to false to stop the timer
 }
+/**
+ * @param {keyvalue} - records enter keystroke . 
+ * Function disables enter key when the user presses enter once, function triggered onDomLoaded.
+ */
 
+function disableEnterKey(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+    }
+}
 /**
  * Function which is called when the timer number value reaches 0 , function handles visual feedback to users in terms of revealing correct answer , without a user needing to click a option
  * @param {question .answer } text answer to the current quiz question
