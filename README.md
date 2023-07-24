@@ -101,10 +101,10 @@ index.html	| Test Using Lighhouse | Pass all checkboxes with above 90% | works a
 index.html	| Nav buttons |That each nav element takes me to the correct page site page | Works as expected
 
 -Lighthouse test results 
-[index.html](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/lighthouseindex.PNG) 
+[index.html](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/html-lighthouse.PNG) 
 
 -Wave test results 
-[wave](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/waveresults.PNG)
+[wave](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/waveresults.PNG)
 -I have also tested my website and have confirmed that it works on both Chrome , Safari and FireFox browsers.
 
 ### Validator Testing 
@@ -112,17 +112,17 @@ index.html	| Nav buttons |That each nav element takes me to the correct page sit
 - HTML
   - No errors were returned when passing through the official [W3C validator] , upon scanning the index.html file present. 
 
-  [Index](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/indexPage.PNG)
+  [Index](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/htmlvalidator.PNG)
 
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator] , upon scanning each .css file present.
 
-  [Style](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/cssstyle.PNG)
+  [Style](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/cssvalidator.PNG)
 
 - Javascript 
   - No errors were found when passing through the official [(JSHint) validator] , upon scanning each .css file present.
 
-  -[Javascript](https://github.com/Blaize-Egelhof/Project_1/blob/main/media-for-readme/jsvalidator.PNG)
+  -[Javascript](https://github.com/Blaize-Egelhof/Tech-Quiz/blob/main/media-for-readme/jsvalidator.PNG)
 
 ### Unfixed Bugs
 

@@ -331,6 +331,7 @@ function stopTimer() {
 /**
  * @param {event} - records any keystroke. 
  * Function disables enter key when the user clicks any key, function triggered onDomLoaded.
+ * Ive included this function to prevent any exploits to my Quiz App, as removing this function lets users spam enter and skip past all questions
  */
 
 function disableEnterKey(event) {
