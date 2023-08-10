@@ -2,11 +2,13 @@
 body {
     background: #666362;
 }
+
 /* Styles for user selection */
 ::selection {
     color: white;
     background: blue;
 }
+
 /* Group of styles for all main html containers*/
 .start-btn,
 .info-box,
@@ -17,26 +19,30 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 /* Active styling for main html containers */
 .info-box.activeInfo,
 .quiz-box.activeQuiz,
 .result-box.activeResult {
     opacity: 1;
     z-index: 5;
-    pointer-events: auto ; 
+    pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
     transition: all 0.3s ease;
 }
+
 /* Style for main start quiz container */
 .start-btn {
     cursor: pointer;
 }
+
 /* Styles for main quiz contents */
 .start-btn-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 /* Styles for main quiz button */
 .start-btn-container button {
     width: 50%;
@@ -46,6 +52,7 @@ body {
     transition: all 0.3s ease;
     font-family: 'Roboto Slab', serif;
 }
+
 /* Styles for main quiz button */
 .start-btn-container button:hover {
     letter-spacing: 1px;
@@ -53,24 +60,27 @@ body {
     transition: all 0.3s ease;
     font-family: 'Roboto Slab', serif;
 }
+
 /* Styles for introduction text*/
 .welcome-title h1 {
     padding-bottom: 20px;
     font-size: 35px;
-    color:whitesmoke;
+    color: whitesmoke;
     white-space: nowrap;
     font-family: 'Roboto Slab', serif;
     text-decoration: underline;
 }
+
 /* Styles for information box  */
 .info-box {
     width: 475px;
     opacity: 0;
-    pointer-events: none ; 
+    pointer-events: none;
     transition: all 0.3s ease;
     background: white;
     border-radius: 10px;
 }
+
 /* Styles for information box title */
 .info-box .info-title {
     width: fit-content;
@@ -82,20 +92,24 @@ body {
     font-size: 28px;
     text-decoration: underline;
 }
+
 /*styles for h2 element*/
 h2 {
     font-size: 28px;
 }
+
 /* Styles for information box list of rules container  */
 .info-box .infolist {
     padding: 15px 30px;
     font-family: 'Roboto Slab', serif;
 }
+
 /* Styles for information box list of rules*/
 .info-box .infolist .info {
     margin: 5px 0;
     font-size: 15px;
 }
+
 /* Styles for information box button container*/
 .info-box .buttons {
     display: flex;
@@ -104,6 +118,7 @@ h2 {
     padding: 0 30px;
     transition: all 0.3s ease;
 }
+
 /* Styles for information box buttons*/
 .info-box .buttons button {
     margin: 0 5px;
@@ -116,20 +131,23 @@ h2 {
     margin: 5px;
     border-radius: 13px;
 }
+
 /* Styles for information box buttons*/
 .info-box .buttons button:hover {
     letter-spacing: 1px;
     text-decoration: underline;
 }
+
 /* Styles for main quiz form container*/
 .quiz-box {
     width: 34.375rem;
     background: white;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
-    pointer-events: none ;
+    pointer-events: none;
     transition: all 0.3s ease;
 }
+
 /* Styles for main quiz form header container*/
 .quiz-header {
     position: relative;
@@ -142,12 +160,14 @@ h2 {
     align-items: center;
     justify-content: space-between;
 }
+
 /* Styles for main quiz form title heading*/
 .quiz-header .title {
     text-decoration: underline;
     font-size: 20px;
     font-family: 'Roboto Slab', serif;
 }
+
 /* Styles for main quiz form timer container*/
 .quiz-header .timer {
     color: black;
@@ -160,43 +180,50 @@ h2 {
     justify-content: space-between;
     width: 9.063rem;
 }
+
 /* Styles for main quiz form timer container static text*/
 .quiz-header .timer .time-left-txt {
     font-weight: 400;
     font-size: 17px;
     user-select: none;
 }
+
 /* Styles for main quiz form timer container countdown text*/
 .quiz-header .timer-sec {
     font-size: 18px;
     height: 30px;
     width: 45px;
     color: black;
-    border:1px solid black ;
+    border: 1px solid black;
     line-height: 30px;
     text-align: center;
     background: white;
     user-select: none;
 }
+
 /* class to be called in javascript when I need to disable users interactivity*/
 .disabled {
-    pointer-events: none ;
+    pointer-events: none;
 }
+
 /* class to be called in javascript when I need to disable users interactivity and make HTML element transparent*/
-.hidden{
-    pointer-events: none ;
-    opacity: 0; 
+.hidden {
+    pointer-events: none;
+    opacity: 0;
 
 }
+
 /* class to be called in javascript when I need to reveal and add interactivity to a HTML element*/
 .revealed {
-    pointer-events: auto ; 
+    pointer-events: auto;
     opacity: 1;
 }
+
 /* class to be called in javascript when I need to enable interactivity to a HTML element*/
 .enabled {
     pointer-events: auto;
 }
+
 /* class to be called in javascript to reveal correct answer*/
 .section .option-list .option.correct {
     color: #155724;
@@ -204,6 +231,7 @@ h2 {
     border: 1px solid green;
     transition: all 0.3s ease;
 }
+
 /* class to be called in javascript to reveal incorrect answers*/
 .section .option-list .option.incorrect {
     color: #721c24;
@@ -211,21 +239,25 @@ h2 {
     border: 1px solid red;
     transition: all 0.3s ease;
 }
+
 /* styles for section element */
 .section {
     padding: 25px 30px 20px 30px;
     background: white;
 }
+
 /* styles for section element */
 .section .question-text {
     font-size: 25px;
     font-family: 'Roboto Slab', serif;
 }
+
 /* styles for option buttons container */
 .section .option-list {
     display: block;
     padding: 20px 0px;
 }
+
 /* styles for option buttons*/
 .section .option-list .option {
     background: rgb(206, 213, 208);
@@ -240,14 +272,17 @@ h2 {
     align-items: center;
     justify-content: space-between;
 }
+
 /* hover selector for option buttons */
 .section .option-list .option:hover {
     border: 1px solid black;
 }
+
 /* hover selector for option buttons to stop interactivity */
 .section .option-list .option.disabled {
     pointer-events: none;
 }
+
 /* styles for quiz footer container */
 .quiz-footer {
     display: flex;
@@ -255,6 +290,7 @@ h2 {
     justify-content: space-between;
     border-top: 1px solid lightgrey;
 }
+
 /* styles for quiz footer buttons */
 .quiz-footer button {
     height: 40px;
@@ -274,8 +310,9 @@ h2 {
     transition: all 0.3s ease;
     margin: 3px 5px;
 }
+
 /* styles for quiz footer score tally container */
-.r-or-w{
+.r-or-w {
     height: 40px;
     padding: 0 12px;
     font-size: 14px;
@@ -291,30 +328,36 @@ h2 {
     transition: all 0.3s ease;
     width: 8%;
 }
+
 /* styles for quiz footer score correct text */
 .right-txt {
     color: green;
 }
+
 /* styles for quiz footer score incorrect text */
 .wrong-txt {
     color: darkred;
 }
+
 /* styles for quiz footer button on hover  */
 footer button:hover {
     background: white;
 }
+
 /* styles for quiz footer button active class  */
 .next-btn.working {
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
 }
+
 /* styles for quiz footer button to disable  */
 .next-btn.disabled {
     opacity: 0;
     pointer-events: none;
     transform: scale(1);
 }
+
 /* styles for result box container  */
 .result-box {
     background: white;
@@ -324,19 +367,21 @@ footer button:hover {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    transform: translate(-50% ,-50%) scale(0.9);
+    transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
     font-family: 'Roboto Slab', serif;
     border-radius: 18px;
 }
+
 /* styles for result box completed text  */
 .result-box .complete-text {
     font-size: 14px;
     font-weight: 500;
     text-align: center;
 }
+
 /* styles for result box emojie  */
 .result-box .score_text span {
     display: flex;
@@ -344,16 +389,19 @@ footer button:hover {
     font-size: 8px;
     font-weight: 400;
 }
+
 /* styles for result box text */
 .result-box .score_text span p {
     padding: 0 4px;
     font-weight: 400;
 }
+
 /* styles for result box button container*/
 .result-box .buttons {
     display: flex;
     margin: 20px 0;
 }
+
 /* styles for result box button */
 .result-box .buttons button {
     height: 45px;
@@ -368,58 +416,68 @@ footer button:hover {
     border: 1px solid black;
     transition: all 0.3s ease;
 }
+
 /* styles for result box button on hover*/
 .result-box .buttons button:hover {
     letter-spacing: 1px;
     text-decoration: underline;
     transition: all 0.3s ease;
 }
+
 /* styles for result box restart button */
 .buttons button .restart {
     color: white;
     background: green;
 }
+
 /* styles for result box restart button on hover */
 .buttons button .restart:hover {
     background: grey;
 }
+
 /* styles for result box quit button */
 .buttons button .quit {
     color: white;
     background: green;
 }
+
 /* styles for footer */
 footer {
-        color: white;
-        white-space: nowrap;
-        opacity: 1;
-        width: 97%;
-        display: flex;
-        justify-content: center;
-        top: 93%;
-        overflow: hidden;
-        position: absolute;
-        bottom: 0%;
+    color: white;
+    white-space: nowrap;
+    opacity: 1;
+    width: 97%;
+    display: flex;
+    justify-content: center;
+    top: 93%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0%;
 }
+
 /* styles for footer to hide it */
 footer .hide {
     opacity: 0;
 }
+
 /* start of Media Queries */
 /* For screen sizes up to 600px */
 @media screen and (max-width: 600px) {
+
     /* style change for footer */
     footer {
         top: auto;
         bottom: 0;
     }
+
     /* style change for start-btn container */
     .start-btn {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
+
     /* style change for info-box container */
     .info-box {
         width: 400px;
@@ -433,13 +491,15 @@ footer .hide {
         right: 50%;
         /* height: 0x; */
     }
+
     /* style change for quiz box container */
     .quiz-box {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width:84%;
+        width: 84%;
     }
+
     /* style change for result box container */
     .result-box {
         background: white;
@@ -449,74 +509,90 @@ footer .hide {
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        transform: translate(-50% ,-50%)scale(0.9);
+        transform: translate(-50%, -50%)scale(0.9);
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s ease;
         font-family: 'Roboto Slab', serif;
         border-radius: 18px;
     }
+
     /* style change for h2 element */
     h2 {
         font-size: 26px;
     }
 }
+
 /* For screen sizes up to 510px */
 @media screen and (max-width: 510px) {
-/* style change for info-box container */
+
+    /* style change for info-box container */
     .info-box {
         width: 90%;
     }
+
     /* style change for info-box title */
     .info-box .info-title {
         /* height: 3.75rem; */
         font-size: 26px;
     }
+
     /*stlye for h2 element */
-    h2{
+    h2 {
         font-size: 26px;
     }
-     /* style change for quiz-box title */
+
+    /* style change for quiz-box title */
     .quiz-header {
         /* height: 4.375rem; */
     }
-     /* style change for quiz-box timer container */
+
+    /* style change for quiz-box timer container */
     .quiz-header .timer {
         /* height: 2.813rem; */
     }
-     /* style change for quiz-box question */
+
+    /* style change for quiz-box question */
     .section .question-text {
         font-size: 22px;
     }
-     /* style change for quiz-box option container */
+
+    /* style change for quiz-box option container */
     .section .option-list .option {
         font-size: 15px;
         margin-bottom: 10px;
     }
-     /* style change for quiz-box timer static text */
+
+    /* style change for quiz-box timer static text */
     .quiz-header .timer .time-left-txt {
         font-size: 15px;
     }
+
     /* style change for quiz-box timer changing text */
     .quiz-header .timer-sec {
         font-size: 16px;
         /* height: 30px; */
     }
+
     /* style for h2 element */
     h2 {
         font-size: 24px;
     }
 }
+
 /* For screen sizes up to 395px */
 @media screen and (max-width: 395px) {
+
     /* style change welcome text */
     .welcome-title h1 {
         font-size: 28px;
     }
+
     /* style change for footer*/
     footer {
         font-size: 13px;
     }
+
     /* style change for timer container*/
     .quiz-header .timer {
         /* height: 2.813rem; */
@@ -524,28 +600,35 @@ footer .hide {
         border-radius: 5px;
         width: 7.063rem;
     }
+
     /* style change for quiz-footer container*/
     .quiz-footer {
         padding: 9px 10px;
     }
+
     .info-box .infolist {
         padding: 6px 30px;
     }
 }
+
 /* For screen sizes up to 359px */
 @media screen and (max-width: 359px) {
+
     /* style change for info-box title*/
     .info-box .info-title {
         font-size: 24px;
     }
+
     /* style change for h2 element */
-    h2{
-        font-size:21px;
+    h2 {
+        font-size: 21px;
     }
+
     /* style change for info-box info container*/
     .info-box .infolist .info {
         font-size: 13px;
     }
+
     /* style change for quiz-header container*/
     .quiz-header {
         /* height: 4.375rem; */
@@ -553,19 +636,23 @@ footer .hide {
         border-radius: 5px 5px 0 0;
     }
 }
+
 /* For screen sizes up to 335px */
 @media screen and (max-width: 335px) {
+
     /* style change for welcome box heading text*/
     .welcome-title h1 {
         font-size: 26px;
     }
+
     /* style change for welcome box heading text container*/
     .info-box .info-title {
         /* height: 3.75rem; */
         font-size: 22px;
     }
+
     /* style change for h2 element*/
-    h2{
-        font-size:20px;
+    h2 {
+        font-size: 20px;
     }
 }
